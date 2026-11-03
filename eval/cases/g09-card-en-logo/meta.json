@@ -1,0 +1,14 @@
+{
+  "id": "g09-card-en-logo",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "card",
+  "language": "en",
+  "font": "Courier",
+  "date_style": "iso",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Landscape card with a logo and a monospaced font; little text to go on."
+}

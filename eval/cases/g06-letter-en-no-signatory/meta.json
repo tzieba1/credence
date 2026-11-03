@@ -1,0 +1,14 @@
+{
+  "id": "g06-letter-en-no-signatory",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "letter",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "long",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Prose layout with no signature block at all; the signatory is null."
+}

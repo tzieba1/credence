@@ -1,0 +1,14 @@
+{
+  "id": "g15-classic-en-dotted",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "classic",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "dotted",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Dotted European dates and an accreditation line that itself mentions a certificate number which is not this certificate's."
+}

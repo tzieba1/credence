@@ -1,0 +1,14 @@
+{
+  "id": "g04-table-en-mixed-dates",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "table",
+  "language": "en",
+  "font": "Times-Roman",
+  "date_style": "dmy",
+  "expiry_date_style": "long",
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Two date formats on one page: day-first numeric for the issue date, words for the expiry."
+}

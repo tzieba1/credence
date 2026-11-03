@@ -2,7 +2,7 @@
 
 Credence measures how far you can trust a model's extraction of typed fields from a document. The name is the point: credence is the degree of belief you are entitled to have in a claim, and this project earns it for a model's output by measuring it against a labelled set.
 
-**Status:** repository skeleton. Nothing extracts anything yet. The log at the end says what exists.
+**Status:** the evaluation set exists; the extraction does not yet. The log at the end says what exists.
 
 ## What it does
 
@@ -26,7 +26,7 @@ To be written as the evaluation produces failures.
 
 ## How the eval works
 
-To be written at checkpoint 3.
+To be written at checkpoint 3, when the runner exists. The set it will run on is already here: eighteen documents under `eval/cases/`, each with a `gold.json` beside it, described case by case in [eval/README.md](eval/README.md). Sixteen are certificates generated from specifications so the labels are known by construction, five of those rendered as image-only scans, and two are documents that are not certificates at all.
 
 ## Running it locally
 
@@ -42,6 +42,12 @@ uv run pytest
 
 Those are the four checks CI runs on every push.
 
+To regenerate the evaluation documents from their specifications:
+
+```sh
+uv run python -m credence.synth
+```
+
 ## Not done, and why
 
 - **A front end.** The API and a CLI are enough. The point is the backend and the measurement behind it.
@@ -51,4 +57,5 @@ Those are the four checks CI runs on every push.
 
 ## Log
 
+- 2026-11-03, checkpoint 1: the document generator and eighteen labelled cases under `eval/cases/`, with tests that hold the committed files to their specifications.
 - 2026-11-03, checkpoint 0: repository skeleton. uv, ruff, mypy strict, pytest and a GitHub Actions workflow that runs them on one smoke test.

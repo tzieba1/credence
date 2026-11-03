@@ -8,9 +8,16 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    { include-group = "synth" },
     "mypy>=1.14",
     "pytest>=8.3",
     "ruff>=0.9",
+    "types-reportlab>=5.0.0.20261008",
+]
+synth = [
+    "pillow>=13.0.0",
+    "pypdfium2>=5.14.0",
+    "reportlab>=5.1.0",
 ]
 
 [build-system]
@@ -39,6 +46,11 @@ python_version = "3.12"
 strict = true
 files = ["src", "tests"]
 warn_unreachable = true
+
+[[tool.mypy.overrides]]
+# pypdfium2 ships no type information. Its use is confined to credence.synth.pdfio.
+module = ["pypdfium2", "pypdfium2.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

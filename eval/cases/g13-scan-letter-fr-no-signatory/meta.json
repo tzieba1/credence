@@ -1,0 +1,14 @@
+{
+  "id": "g13-scan-letter-fr-no-signatory",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "letter",
+  "language": "fr",
+  "font": "Times-Roman",
+  "date_style": "dmy",
+  "expiry_date_style": null,
+  "scanned": true,
+  "pages": 2,
+  "is_certificate": true,
+  "hard": "Two scanned pages of French prose with no signature; the annex adds more names and numbers to ignore."
+}

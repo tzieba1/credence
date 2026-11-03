@@ -1,0 +1,14 @@
+{
+  "id": "n02-scan-memo-es",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "memo",
+  "language": "es",
+  "font": "Times-Roman",
+  "date_style": "long",
+  "expiry_date_style": null,
+  "scanned": true,
+  "pages": 1,
+  "is_certificate": false,
+  "hard": "Not a certificate. A scanned Spanish internal memo that mentions an audit and a certificate by number; every field should still be null."
+}

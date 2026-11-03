@@ -1,0 +1,14 @@
+{
+  "id": "g03-table-en-us-numeric",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "table",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "mdy",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "US month-first numeric dates, plus an accreditation registration number and a street number as distractors for the certificate number."
+}

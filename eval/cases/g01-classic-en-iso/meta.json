@@ -1,0 +1,14 @@
+{
+  "id": "g01-classic-en-iso",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "classic",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "iso",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "The baseline: clean layout, ISO dates, every field present."
+}

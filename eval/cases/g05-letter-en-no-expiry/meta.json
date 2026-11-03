@@ -1,0 +1,14 @@
+{
+  "id": "g05-letter-en-no-expiry",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "letter",
+  "language": "en",
+  "font": "Times-Roman",
+  "date_style": "long_us",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Prose layout with no expiry: the text says the certificate does not expire, so the gold is null and a guessed date is wrong."
+}

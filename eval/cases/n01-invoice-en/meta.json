@@ -1,0 +1,14 @@
+{
+  "id": "n01-invoice-en",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "invoice",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "iso",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": false,
+  "hard": "Not a certificate. An invoice with a number, dates and two company names; every field should be null."
+}

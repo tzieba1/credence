@@ -1,0 +1,14 @@
+{
+  "id": "g07-classic-es-long",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "classic",
+  "language": "es",
+  "font": "Helvetica",
+  "date_style": "long",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Spanish labels and dates in words; accented names must survive intact."
+}

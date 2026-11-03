@@ -1,0 +1,14 @@
+{
+  "id": "g08-table-fr-long",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "table",
+  "language": "fr",
+  "font": "Times-Roman",
+  "date_style": "long",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "French labels and dates; the signatory's name starts with an accented capital."
+}

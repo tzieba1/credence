@@ -1,0 +1,14 @@
+{
+  "id": "g14-scan-card-en",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "card",
+  "language": "en",
+  "font": "Helvetica",
+  "date_style": "mdy",
+  "expiry_date_style": null,
+  "scanned": true,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Scanned landscape card with a logo and a one-year validity."
+}

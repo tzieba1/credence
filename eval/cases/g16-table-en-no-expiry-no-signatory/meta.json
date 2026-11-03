@@ -1,0 +1,14 @@
+{
+  "id": "g16-table-en-no-expiry-no-signatory",
+  "source": "generated",
+  "generator": "credence.synth",
+  "layout": "table",
+  "language": "en",
+  "font": "Courier",
+  "date_style": "iso",
+  "expiry_date_style": null,
+  "scanned": false,
+  "pages": 1,
+  "is_certificate": true,
+  "hard": "Both expiry and signatory absent on an otherwise complete grid; two nulls are correct, and a batch number is a distractor."
+}
