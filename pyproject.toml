@@ -4,7 +4,11 @@ version = "0.0.1"
 description = "Typed field extraction from documents with a Claude model, with an evaluation set that measures how far the output can be trusted."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "anthropic>=2.4.0",
+    "pydantic>=2.14.2",
+    "pydantic-settings>=2.16.2",
+]
 
 [dependency-groups]
 dev = [
@@ -19,6 +23,9 @@ synth = [
     "pypdfium2>=5.14.0",
     "reportlab>=5.1.0",
 ]
+
+[project.scripts]
+credence = "credence.cli:main"
 
 [build-system]
 requires = ["hatchling"]

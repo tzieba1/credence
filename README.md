@@ -2,7 +2,7 @@
 
 Credence measures how far you can trust a model's extraction of typed fields from a document. The name is the point: credence is the degree of belief you are entitled to have in a claim, and this project earns it for a model's output by measuring it against a labelled set.
 
-**Status:** the evaluation set exists; the extraction does not yet. The log at the end says what exists.
+**Status:** the extraction works from the command line against the evaluation set. No measured accuracy yet; that is the next checkpoint. The log at the end says what exists.
 
 ## What it does
 
@@ -14,7 +14,42 @@ To learn to ship a model-backed feature with evidence behind it: a schema chosen
 
 ## Design
 
-To be written at checkpoint 2, when the extraction call exists.
+```
+CLI / HTTP  ->  FastAPI  ->  extraction service  ->  Claude API
+                   |              |
+                Postgres      eval runner (pytest)
+```
+
+One process. An extraction takes seconds, so the API will run it inline; there is no queue and no worker. If the service ever had to absorb bursts, a queue would sit between the API and the extraction service, with the extraction row created first in a `pending` state. It is not there because nothing in the project needs it yet, and a queue that nothing needs is a liability to explain, not an asset.
+
+The API, the database and the LangGraph variant are not built yet. What exists is the call and the bookkeeping around it.
+
+### The call
+
+The PDF goes to the model as a base64 document block, ahead of a one-line instruction. The system prompt is a file in the repository, `src/credence/prompts/v1.md`, and its version string is recorded on every extraction. The SDK's `messages.parse` sends the JSON schema of the `Certificate` Pydantic model as the required output format and validates the reply against it, so the service never parses JSON by hand. Every field of the schema is required and nullable, which forces the model to say null rather than leave a key out.
+
+Thinking is on, as it always is on Opus 5.5, at the default `medium` effort. The request timeout is two minutes and the SDK retries rate limits and server errors twice before the service gives up.
+
+### What is recorded
+
+For every call: the model the API reports it used, the prompt version, the implementation (`direct` now, `langgraph` later), input and output tokens, cache tokens, cost in USD from a price table in `src/credence/pricing.py`, latency, the stop reason, the request id, and the model's raw text output for the evaluation fixtures.
+
+| model | input | output | cache read | cache write |
+|---|---|---|---|---|
+| claude-opus-5-5 | $4.00 | $20.00 | $0.20 | $5.00 |
+| claude-haiku-5-5 | $0.10 | $0.50 | $0.01 | $0.125 |
+
+USD per million tokens, Claude API list prices as of November 2026.
+
+### Failure handling
+
+The stop reason is checked before the record is trusted. `end_turn` with a parsed record is a success. Everything else is a recorded failure with its usage and cost still attached: a `refusal` (with the category the API gives), `max_tokens` even when the truncated output happened to be valid JSON, or any stop reason this code does not know. One path loses the usage: when the output is cut off mid-JSON, the SDK's validation fails before the response is visible, and the extraction is recorded as `invalid_output` with no tokens. The 16,000-token output ceiling makes that path unlikely for an eight-field record, and the evaluation will show whether it ever happens.
+
+The service does not use the API's server-side fallback, which would re-run a refused request on another model inside the same call. The point of this project is to measure one model's output, and a row that says `claude-opus-5-5` must have come from that model.
+
+If the API cannot be reached, times out, keeps rate limiting, or answers with a server error, the service raises one exception, `ModelUnavailable`, which the HTTP layer will turn into a 503 with a reason. A 4xx other than 429 is a bug in this code and is allowed to surface.
+
+Logs carry the document's hash prefix, sizes, timings, stop reasons and cost. They never carry the document's content or the model's output; a test asserts that.
 
 ## Results
 
@@ -30,7 +65,15 @@ To be written at checkpoint 3, when the runner exists. The set it will run on is
 
 ## Running it locally
 
-Requires Python 3.12 and [uv](https://docs.astral.sh/uv/).
+Requires Python 3.12 and [uv](https://docs.astral.sh/uv/). To call the model, put an API key in the environment:
+
+```sh
+export ANTHROPIC_API_KEY=...
+uv run credence extract eval/cases/g01-classic-en-iso/document.pdf
+uv run credence extract eval/cases/g12-scan-table-es/document.pdf --model claude-haiku-5-5 --json
+```
+
+Every `credence extract` is a live call and costs money, about five cents on Opus 5.5 for a one-page certificate before measurement says otherwise. Settings such as the default model, prompt version and effort are read from `CREDENCE_*` environment variables or a `.env` file; `.env.example` lists them.
 
 ```sh
 uv sync
@@ -57,5 +100,6 @@ uv run python -m credence.synth
 
 ## Log
 
+- 2026-11-03, checkpoint 2: the `Certificate` schema, the extraction service around `messages.parse` with cost, latency and stop-reason bookkeeping, and `credence extract`. Tests drive the real SDK against a fake API.
 - 2026-11-03, checkpoint 1: the document generator and eighteen labelled cases under `eval/cases/`, with tests that hold the committed files to their specifications.
 - 2026-11-03, checkpoint 0: repository skeleton. uv, ruff, mypy strict, pytest and a GitHub Actions workflow that runs them on one smoke test.
