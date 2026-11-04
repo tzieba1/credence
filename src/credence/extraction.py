@@ -15,7 +15,7 @@ import logging
 import time
 from dataclasses import dataclass
 from decimal import Decimal
-from typing import Literal
+from typing import Any, Literal
 
 import anthropic
 import pydantic
@@ -52,7 +52,9 @@ class Extraction:
     """As the API reported it; None when the SDK raised before exposing the response."""
     request_id: str | None
     raw_output: str | None
-    """The model's text output, verbatim, for fixtures. Never logged."""
+    """The model's text output, verbatim. Never logged."""
+    api_response: dict[str, Any] | None
+    """The whole API response as JSON, so an evaluation fixture can replay it. Never logged."""
 
     @property
     def ok(self) -> bool:
@@ -180,6 +182,7 @@ class Extractor:
             stop_reason=response.stop_reason,
             request_id=response._request_id,
             raw_output=raw_output,
+            api_response=response.to_dict(mode="json"),
         )
 
     def _failed(self, failure: str, latency_ms: int) -> Extraction:
@@ -195,6 +198,7 @@ class Extractor:
             stop_reason=None,
             request_id=None,
             raw_output=None,
+            api_response=None,
         )
 
 

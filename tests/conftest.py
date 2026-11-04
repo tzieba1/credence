@@ -81,6 +81,27 @@ class FakeApi:
         )
 
 
+def pytest_addoption(parser: pytest.Parser) -> None:
+    group = parser.getgroup("eval", "the evaluation set (pytest -m eval)")
+    group.addoption(
+        "--live",
+        action="store_true",
+        default=False,
+        help="call the API, rewrite the fixtures and write a results file (costs money)",
+    )
+    group.addoption(
+        "--model",
+        action="append",
+        default=None,
+        metavar="MODEL",
+        help="model(s) to evaluate; default: every model with recorded fixtures, "
+        "or the configured model when --live",
+    )
+    group.addoption(
+        "--prompt", default=None, metavar="VERSION", help="prompt version; default: configured"
+    )
+
+
 @pytest.fixture
 def fake_api() -> Callable[..., FakeApi]:
     def make(*bodies: dict[str, Any], status: int = 200) -> FakeApi:

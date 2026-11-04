@@ -2,7 +2,7 @@
 
 Credence measures how far you can trust a model's extraction of typed fields from a document. The name is the point: credence is the degree of belief you are entitled to have in a claim, and this project earns it for a model's output by measuring it against a labelled set.
 
-**Status:** the extraction works from the command line against the evaluation set. No measured accuracy yet; that is the next checkpoint. The log at the end says what exists.
+**Status:** the evaluation runner is built and runs in CI against recorded responses. The first live run has not been recorded yet, so the results table below is empty. The log at the end says what exists.
 
 ## What it does
 
@@ -53,7 +53,13 @@ Logs carry the document's hash prefix, sizes, timings, stop reasons and cost. Th
 
 ## Results
 
-To be written at checkpoint 3, when the evaluation runner exists.
+Per-field accuracy is exact match after normalisation (Unicode composed, whitespace collapsed, case ignored; dates compared as ISO strings). Document accuracy is all seven fields right. Cost is from the usage the API reported, priced from the table above. Latency is the median wall-clock time of the call.
+
+| model | prompt | impl | issuer | holder | number | issue | expiry | scope | signatory | doc | $/doc | p50 ms |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| *no live run recorded yet* | | | | | | | | | | | | |
+
+Each row comes from a file under `eval/results/`, which also holds, per run, the null-handling precision and recall per field and every wrong case with what was predicted and what the gold says.
 
 ## What went wrong and what changed
 
@@ -61,7 +67,21 @@ To be written as the evaluation produces failures.
 
 ## How the eval works
 
-To be written at checkpoint 3, when the runner exists. The set it will run on is already here: eighteen documents under `eval/cases/`, each with a `gold.json` beside it, described case by case in [eval/README.md](eval/README.md). Sixteen are certificates generated from specifications so the labels are known by construction, five of those rendered as image-only scans, and two are documents that are not certificates at all.
+The set is eighteen documents under `eval/cases/`, each with a `gold.json` beside it, described case by case in [eval/README.md](eval/README.md). Sixteen are certificates generated from specifications so the labels are known by construction, five of those rendered as image-only scans, and two are documents that are not certificates at all.
+
+`pytest -m eval` runs it, in one of two modes.
+
+**Recorded**, the default and what CI runs on every push. For each model that has fixtures under `eval/fixtures/<prompt version>/<model>/`, the saved API response for every case is fed back through the real SDK client by way of a fake HTTP transport, so the request is built, the schema is sent, the reply is validated and the record is scored by exactly the code that runs live. Only the network is replaced. This is free and deterministic, and it still catches a change to the schema, the parsing, the normalisation or the price table. The test fails if any field's accuracy, or the document accuracy, falls below the floor in `eval/thresholds.json` for that model. With nothing recorded it skips rather than passes.
+
+**Live**, run by hand when the prompt or the model changes:
+
+```sh
+uv run pytest -m eval --live --model claude-opus-5-5 --prompt v1
+```
+
+That calls the API once per case, overwrites the fixtures for that prompt and model, writes `eval/results/<timestamp>-<model>-<prompt>-<implementation>.json` and a Markdown summary beside it, and prints the summary. A full run on Opus 5.5 is expected to cost about a dollar. `uv run credence report` prints the same summary from the fixtures without calling anything.
+
+The split matters because a model's output is not deterministic and every live call costs money. CI should answer "did my code change break the measurement" for free, and only a person decides to spend on "did the model's behaviour change".
 
 ## Running it locally
 
@@ -100,6 +120,7 @@ uv run python -m credence.synth
 
 ## Log
 
+- 2026-11-03, checkpoint 3: the evaluation runner with per-field accuracy, null precision and recall, cost and latency; recorded fixtures replayed through the real SDK client; `pytest -m eval` in CI with `--live` by hand; results files and the table above. First live run pending.
 - 2026-11-03, checkpoint 2: the `Certificate` schema, the extraction service around `messages.parse` with cost, latency and stop-reason bookkeeping, and `credence extract`. Tests drive the real SDK against a fake API.
 - 2026-11-03, checkpoint 1: the document generator and eighteen labelled cases under `eval/cases/`, with tests that hold the committed files to their specifications.
 - 2026-11-03, checkpoint 0: repository skeleton. uv, ruff, mypy strict, pytest and a GitHub Actions workflow that runs them on one smoke test.

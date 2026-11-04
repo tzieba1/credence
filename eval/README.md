@@ -1,12 +1,17 @@
 # The evaluation set
 
-Eighteen documents, each in its own directory under `cases/`:
+Eighteen documents, each in its own directory under `cases/`, plus what running them produces:
 
 ```
-eval/cases/<id>/document.pdf   the input
-eval/cases/<id>/gold.json      what a correct extraction says
-eval/cases/<id>/meta.json      where it came from and what makes it hard
+eval/cases/<id>/document.pdf                 the input
+eval/cases/<id>/gold.json                    what a correct extraction says
+eval/cases/<id>/meta.json                    where it came from and what makes it hard
+eval/fixtures/<prompt>/<model>/<id>.json     the API's recorded response for that case
+eval/results/<timestamp>-<model>-<prompt>-<impl>.{json,md}   one live run, scored
+eval/thresholds.json                         per-model accuracy floors the test enforces
 ```
+
+A fixture holds the whole response body the API returned, the latency of that call and its request id. The recorded eval replays it through the real client, so the fixture is the only thing that changes between a free run and a paid one. Fixtures are overwritten by `pytest -m eval --live`; results files are never overwritten, each run gets its own.
 
 Sixteen are certificates. Two are not, and the right answer for them is a record with every field null.
 
@@ -69,4 +74,4 @@ Date wordings: `iso` 2024-03-14, `long` 14 March 2024 (or 14 de marzo de 2024, 1
 
 ## What the tests check
 
-`tests/test_synth.py` renders every case and asserts that the text layer of each text-based PDF contains every gold value (and the "does not expire" or "valid without signature" sentence where a field is null), that scanned PDFs have no text layer at all, and that rendering is reproducible. `tests/test_eval_cases.py` asserts that the committed `gold.json`, `meta.json` and page counts under `eval/cases/` match the specifications, and that this file lists every case.
+`tests/test_eval.py` is the evaluation itself, described in the main README. `tests/test_evaluation_pipeline.py` records fixtures from a fake API, replays them and checks the metrics, so the runner is tested without a single live call. `tests/test_synth.py` renders every case and asserts that the text layer of each text-based PDF contains every gold value (and the "does not expire" or "valid without signature" sentence where a field is null), that scanned PDFs have no text layer at all, and that rendering is reproducible. `tests/test_eval_cases.py` asserts that the committed `gold.json`, `meta.json` and page counts under `eval/cases/` match the specifications, and that this file lists every case.

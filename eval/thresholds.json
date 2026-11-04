@@ -1,0 +1,5 @@
+{
+  "_comment": "Floors the eval test enforces per model, set after the first live run and raised when a prompt version earns it. 0.0 until a run has been recorded.",
+  "claude-opus-5-5": {"field_accuracy": 0.0, "document_accuracy": 0.0},
+  "claude-haiku-5-5": {"field_accuracy": 0.0, "document_accuracy": 0.0}
+}
