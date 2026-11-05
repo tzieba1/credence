@@ -1,13 +1,20 @@
 """Shared fixtures: a real SDK client wired to a fake HTTP transport."""
 
 import json
-from collections.abc import Callable
+import os
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
 
 import anthropic
 import httpx2 as httpx
 import pytest
+import sqlalchemy
+from alembic import command
+from alembic.config import Config
+from sqlalchemy import Engine, text
+from sqlalchemy.engine import make_url
 
 
 def message_body(
@@ -112,3 +119,68 @@ def fake_api() -> Callable[..., FakeApi]:
         return FakeApi(responses=responses)
 
     return make
+
+
+# --- Postgres -----------------------------------------------------------------
+#
+# The API tests need a real Postgres: JSONB, the unique index, the migrations.
+# They look for CREDENCE_TEST_DATABASE_URL and fall back to a credence_test
+# database on the Compose instance. If that is not running they skip, with the
+# reason in the summary; when the variable is set explicitly (CI does) they fail
+# instead, so a missing database can never turn the suite green by accident.
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_TEST_DATABASE_URL = "postgresql+psycopg://credence:credence@localhost:5432/credence_test"
+
+
+def alembic_config(url: str) -> Config:
+    cfg = Config(str(ROOT / "alembic.ini"))
+    cfg.set_main_option("script_location", str(ROOT / "migrations"))
+    cfg.set_main_option("sqlalchemy.url", url)
+    return cfg
+
+
+def _ensure_database(url: str) -> None:
+    """Create the test database if the server is there but the database is not."""
+    target = make_url(url)
+    maintenance = sqlalchemy.create_engine(
+        target.set(database="credence"), isolation_level="AUTOCOMMIT"
+    )
+    with maintenance.connect() as conn:
+        exists = conn.scalar(
+            text("SELECT 1 FROM pg_database WHERE datname = :name"), {"name": target.database}
+        )
+        if not exists:
+            conn.execute(text(f'CREATE DATABASE "{target.database}"'))
+    maintenance.dispose()
+
+
+@pytest.fixture(scope="session")
+def database_url() -> str:
+    explicit = os.environ.get("CREDENCE_TEST_DATABASE_URL")
+    url = explicit or DEFAULT_TEST_DATABASE_URL
+    try:
+        _ensure_database(url)
+    except sqlalchemy.exc.OperationalError as exc:
+        if explicit:
+            raise
+        pytest.skip(f"no Postgres for the API tests (docker compose up -d): {exc.orig}")
+    return url
+
+
+@pytest.fixture(scope="session")
+def migrated_engine(database_url: str) -> Iterator[Engine]:
+    """A clean database at the head migration, built by downgrading and upgrading."""
+    cfg = alembic_config(database_url)
+    command.downgrade(cfg, "base")
+    command.upgrade(cfg, "head")
+    engine = sqlalchemy.create_engine(database_url)
+    yield engine
+    engine.dispose()
+
+
+@pytest.fixture
+def clean_tables(migrated_engine: Engine) -> Engine:
+    with migrated_engine.begin() as conn:
+        conn.execute(text("TRUNCATE extractions, documents RESTART IDENTITY CASCADE"))
+    return migrated_engine

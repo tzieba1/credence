@@ -12,6 +12,7 @@ Nothing in this module logs document content or model output.
 import base64
 import hashlib
 import logging
+import os
 import time
 from dataclasses import dataclass
 from decimal import Decimal
@@ -34,6 +35,10 @@ USER_INSTRUCTION = "Extract the certificate's fields."
 
 class ModelUnavailable(Exception):
     """The API could not be reached or did not answer. The caller should say 503."""
+
+
+def api_key_present() -> bool:
+    return bool(os.environ.get("ANTHROPIC_API_KEY"))
 
 
 @dataclass(frozen=True)
@@ -82,6 +87,9 @@ class Extractor:
     def from_settings(
         cls, settings: Settings, *, model: str | None = None, prompt_version: str | None = None
     ) -> "Extractor":
+        if not api_key_present():
+            # The SDK would only notice when building the first request, as a TypeError.
+            raise ModelUnavailable("ANTHROPIC_API_KEY is not set")
         # The SDK reads ANTHROPIC_API_KEY itself and retries 429 and 5xx twice.
         client = anthropic.Anthropic(timeout=settings.request_timeout_s)
         return cls(

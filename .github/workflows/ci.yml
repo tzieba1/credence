@@ -8,6 +8,23 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: credence
+          POSTGRES_PASSWORD: credence
+          POSTGRES_DB: credence
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U credence -d credence"
+          --health-interval 2s
+          --health-timeout 2s
+          --health-retries 15
+    env:
+      # Set explicitly so the API tests fail, rather than skip, if Postgres is not there.
+      CREDENCE_TEST_DATABASE_URL: postgresql+psycopg://credence:credence@localhost:5432/credence_test
     steps:
       - uses: actions/checkout@v7
 

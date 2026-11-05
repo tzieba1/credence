@@ -5,9 +5,16 @@ description = "Typed field extraction from documents with a Claude model, with a
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "alembic>=1.20.1",
     "anthropic>=2.4.0",
+    "fastapi>=0.162.0",
+    "psycopg[binary]>=3.3.8",
     "pydantic>=2.14.2",
     "pydantic-settings>=2.16.2",
+    "pypdfium2>=5.14.0",
+    "python-multipart>=0.0.33",
+    "sqlalchemy>=2",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 [dependency-groups]
@@ -20,7 +27,6 @@ dev = [
 ]
 synth = [
     "pillow>=13.0.0",
-    "pypdfium2>=5.14.0",
     "reportlab>=5.1.0",
 ]
 
@@ -37,7 +43,7 @@ packages = ["src/credence"]
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-src = ["src", "tests"]
+src = ["src", "tests", "migrations"]
 # Ruff lints and formats Python blocks inside Markdown by default. The snippets
 # in the README and PLAN.md are illustrative, not code that runs; leave them be.
 extend-exclude = ["*.md"]
@@ -51,11 +57,11 @@ quote-style = "double"
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["src", "tests"]
+files = ["src", "tests", "migrations"]
 warn_unreachable = true
 
 [[tool.mypy.overrides]]
-# pypdfium2 ships no type information. Its use is confined to credence.synth.pdfio.
+# pypdfium2 ships no type information. Its use is confined to credence.pdfio.
 module = ["pypdfium2", "pypdfium2.*"]
 ignore_missing_imports = true
 

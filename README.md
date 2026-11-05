@@ -2,7 +2,7 @@
 
 Credence measures how far you can trust a model's extraction of typed fields from a document. The name is the point: credence is the degree of belief you are entitled to have in a claim, and this project earns it for a model's output by measuring it against a labelled set.
 
-**Status:** the evaluation runner is built and runs in CI against recorded responses. The first live run has not been recorded yet, so the results table below is empty. The log at the end says what exists.
+**Status:** the HTTP API, Postgres storage and the evaluation runner are built and tested. The first live evaluation run has not been recorded yet, so the results table below is empty. The log at the end says what exists.
 
 ## What it does
 
@@ -20,9 +20,30 @@ CLI / HTTP  ->  FastAPI  ->  extraction service  ->  Claude API
                 Postgres      eval runner (pytest)
 ```
 
-One process. An extraction takes seconds, so the API will run it inline; there is no queue and no worker. If the service ever had to absorb bursts, a queue would sit between the API and the extraction service, with the extraction row created first in a `pending` state. It is not there because nothing in the project needs it yet, and a queue that nothing needs is a liability to explain, not an asset.
+One process. An extraction takes seconds, so the API runs it inline; there is no queue and no worker. The handlers are ordinary functions, so FastAPI runs each one in a worker thread and a call to the model blocks that thread, not the event loop. If the service ever had to absorb bursts, a queue would sit between the API and the extraction service, with the extraction row created first in a `pending` state. It is not there because nothing in the project needs it yet, and a queue that nothing needs is a liability to explain, not an asset.
 
-The API, the database and the LangGraph variant are not built yet. What exists is the call and the bookkeeping around it.
+The LangGraph variant is not built yet.
+
+### The API
+
+| method and path | what it does |
+|---|---|
+| `POST /documents` | Upload a PDF. Rejects anything that is not a PDF, is larger than the configured size, or has more pages than the limit. The same bytes uploaded twice are one document: the second upload answers 200 with the existing row. |
+| `GET /documents/{id}` | The document's hash, name, size, page count and upload time. |
+| `POST /documents/{id}/extractions` | Run the model on the document, with an optional `model` and `prompt_version` in the body, and store the result. A refusal or a truncated output is still a stored row, with `record` null and `failure` set. Only an API that cannot be reached is an error, 503 with the reason. |
+| `GET /extractions/{id}` | One extraction, as stored. |
+| `GET /extractions` | Newest first, filterable by `document_id`, `model` and `prompt_version`, paged with `limit` and `offset`. |
+| `GET /health` | Whether Postgres answers and whether a model API key is configured. 503 and `degraded` if either is missing. |
+
+Everything but `/health` requires the service's single API key in `X-API-Key` when `CREDENCE_API_KEY` is set. Unset, the service is open, which is only acceptable on a laptop. The OpenAPI document is at `/docs`.
+
+### The data model
+
+Two tables, created by a hand-written Alembic migration that a test compares against the SQLAlchemy models so the two cannot drift.
+
+`documents` holds the file's sha256 (unique), filename, size, page count, upload time and the path where the bytes are stored. The PDF itself goes on disk under `data/documents/`, named by its hash, never into the database.
+
+`extractions` is one call against one document: the model the API reported, the prompt version, the implementation, the validated fields as JSONB with the free-text `notes` in its own column, the failure reason and stop reason, input, output and cache tokens, cost in USD to six decimals, latency, the request id and the time. A row is kept whether or not there is a record, because a refusal that cost money is part of the measurement.
 
 ### The call
 
@@ -47,7 +68,7 @@ The stop reason is checked before the record is trusted. `end_turn` with a parse
 
 The service does not use the API's server-side fallback, which would re-run a refused request on another model inside the same call. The point of this project is to measure one model's output, and a row that says `claude-opus-5-5` must have come from that model.
 
-If the API cannot be reached, times out, keeps rate limiting, or answers with a server error, the service raises one exception, `ModelUnavailable`, which the HTTP layer will turn into a 503 with a reason. A 4xx other than 429 is a bug in this code and is allowed to surface.
+If the API cannot be reached, times out, keeps rate limiting, or answers with a server error, the service raises one exception, `ModelUnavailable`, which the HTTP layer turns into a 503 with a reason. A missing `ANTHROPIC_API_KEY` is reported the same way, instead of as the SDK's error on the first request. A 4xx other than 429 is a bug in this code and is allowed to surface.
 
 Logs carry the document's hash prefix, sizes, timings, stop reasons and cost. They never carry the document's content or the model's output; a test asserts that.
 
@@ -85,7 +106,7 @@ The split matters because a model's output is not deterministic and every live c
 
 ## Running it locally
 
-Requires Python 3.12 and [uv](https://docs.astral.sh/uv/). To call the model, put an API key in the environment:
+Requires Python 3.12, [uv](https://docs.astral.sh/uv/) and, for the API and its tests, Docker for Postgres. To call the model, put an API key in the environment:
 
 ```sh
 export ANTHROPIC_API_KEY=...
@@ -95,6 +116,24 @@ uv run credence extract eval/cases/g12-scan-table-es/document.pdf --model claude
 
 Every `credence extract` is a live call and costs money, about five cents on Opus 5.5 for a one-page certificate before measurement says otherwise. Settings such as the default model, prompt version and effort are read from `CREDENCE_*` environment variables or a `.env` file; `.env.example` lists them.
 
+To run the service:
+
+```sh
+docker compose up -d          # Postgres on localhost:5432, matching the default CREDENCE_DATABASE_URL
+uv run alembic upgrade head   # create the tables
+uv run credence serve         # http://127.0.0.1:8000, OpenAPI at /docs
+```
+
+Then, from another shell:
+
+```sh
+curl -F file=@eval/cases/g01-classic-en-iso/document.pdf localhost:8000/documents
+curl -X POST -H 'content-type: application/json' -d '{}' localhost:8000/documents/1/extractions
+curl 'localhost:8000/extractions?document_id=1'
+```
+
+The checks CI runs on every push:
+
 ```sh
 uv sync
 uv run ruff check .
@@ -103,7 +142,7 @@ uv run mypy
 uv run pytest
 ```
 
-Those are the four checks CI runs on every push.
+The API and migration tests need Postgres. They use a `credence_test` database on the Compose instance, creating it if needed, and skip with a message when it is not running. CI runs them against a Postgres service and sets `CREDENCE_TEST_DATABASE_URL` explicitly, which turns that skip into a failure, so a missing database cannot make CI green by accident.
 
 To regenerate the evaluation documents from their specifications:
 
@@ -120,6 +159,7 @@ uv run python -m credence.synth
 
 ## Log
 
+- 2026-11-04, checkpoint 4: the HTTP API with upload, extraction, read-back and listing; `documents` and `extractions` in Postgres through SQLAlchemy, with an Alembic migration tested against the models; Docker Compose for Postgres; `credence serve`. The API tests run the real extractor over a fake transport against a real database, in CI as well.
 - 2026-11-03, checkpoint 3: the evaluation runner with per-field accuracy, null precision and recall, cost and latency; recorded fixtures replayed through the real SDK client; `pytest -m eval` in CI with `--live` by hand; results files and the table above. First live run pending.
 - 2026-11-03, checkpoint 2: the `Certificate` schema, the extraction service around `messages.parse` with cost, latency and stop-reason bookkeeping, and `credence extract`. Tests drive the real SDK against a fake API.
 - 2026-11-03, checkpoint 1: the document generator and eighteen labelled cases under `eval/cases/`, with tests that hold the committed files to their specifications.

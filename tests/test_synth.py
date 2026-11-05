@@ -7,10 +7,10 @@ from pathlib import Path
 
 import pytest
 
+from credence.pdfio import extract_text, page_count
 from credence.synth import CASES, GOLD_KEYS, CaseSpec, CertificateFields
 from credence.synth.__main__ import build, main
 from credence.synth.dates import DateStyle, Language, format_date
-from credence.synth.pdfio import extract_text, page_count
 from credence.synth.render import WORDS
 
 BY_ID = {c.id: c for c in CASES}

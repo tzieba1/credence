@@ -10,9 +10,23 @@ from io import BytesIO
 
 from PIL import Image, ImageFilter
 
-from credence.synth.pdfio import rasterise
+from credence.pdfio import open_pdf
 
 _EPOCH = time.gmtime(0)
+
+
+def rasterise(pdf: bytes, dpi: int) -> list[Image.Image]:
+    """Each page as a greyscale PIL image."""
+    with open_pdf(pdf) as doc:
+        images: list[Image.Image] = []
+        for page in doc:
+            bitmap = page.render(scale=dpi / 72)
+            pil = bitmap.to_pil()
+            assert isinstance(pil, Image.Image)
+            images.append(pil.convert("L"))
+            bitmap.close()
+            page.close()
+        return images
 
 
 def scan(pdf: bytes, *, skew_degrees: float, seed: int, dpi: int = 150) -> bytes:

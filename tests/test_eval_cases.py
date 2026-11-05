@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
+from credence.pdfio import page_count
 from credence.synth import CASES, CaseSpec
 from credence.synth.__main__ import meta
-from credence.synth.pdfio import page_count
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES_DIR = ROOT / "eval" / "cases"

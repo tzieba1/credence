@@ -1,0 +1,21 @@
+# Local Postgres only. The service itself runs with `uv run credence serve`
+# so a code change does not need an image rebuild.
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: credence
+      POSTGRES_PASSWORD: credence
+      POSTGRES_DB: credence
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U credence -d credence"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+volumes:
+  postgres:

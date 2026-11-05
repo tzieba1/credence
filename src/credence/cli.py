@@ -2,11 +2,13 @@
 
     credence extract path/to/document.pdf [--model MODEL] [--prompt VERSION] [--json]
     credence report [--model MODEL] [--prompt VERSION]
+    credence serve [--host HOST] [--port PORT]
 
 `extract` prints one document's record and what the call cost. It needs
 ANTHROPIC_API_KEY in the environment; every run is a live call and spends
 money. `report` replays the recorded evaluation fixtures and prints the
-Markdown summary; it costs nothing.
+Markdown summary; it costs nothing. `serve` runs the HTTP API against the
+configured Postgres.
 """
 
 import argparse
@@ -64,10 +66,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     rp.add_argument("--model", help="override the configured model")
     rp.add_argument("--prompt", help="override the configured prompt version")
     rp.add_argument("--eval-dir", type=Path, default=DEFAULT_EVAL_DIR)
+    sv = sub.add_parser("serve", help="run the HTTP API")
+    sv.add_argument("--host", default="127.0.0.1")
+    sv.add_argument("--port", type=int, default=8000)
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     settings = Settings()
+    if args.command == "serve":
+        import uvicorn
+
+        from credence.api import create_app
+
+        uvicorn.run(create_app(settings), host=args.host, port=args.port, log_level="info")
+        return 0
     if args.command == "report":
         spec = RunSpec(
             model=args.model or settings.extraction_model,
@@ -84,8 +96,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     pdf = args.pdf.read_bytes()
     if len(pdf) > settings.max_document_bytes:
         parser.error(f"{args.pdf} is larger than {settings.max_document_bytes} bytes")
-    extractor = Extractor.from_settings(settings, model=args.model, prompt_version=args.prompt)
     try:
+        extractor = Extractor.from_settings(settings, model=args.model, prompt_version=args.prompt)
         extraction = extractor.extract(pdf)
     except ModelUnavailable as exc:
         print(f"error: {exc}", file=sys.stderr)
