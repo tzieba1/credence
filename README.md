@@ -2,7 +2,7 @@
 
 Credence measures how far you can trust a model's extraction of typed fields from a document. The name is the point: credence is the degree of belief you are entitled to have in a claim, and this project earns it for a model's output by measuring it against a labelled set.
 
-**Status:** the HTTP API, Postgres storage and the evaluation runner are built and tested. The first live evaluation run has not been recorded yet, so the results table below is empty. The log at the end says what exists.
+**Status:** the HTTP API, Postgres storage and the evaluation runner are built and tested, and the first live run of both models is recorded below. The log at the end says what exists.
 
 ## What it does
 
@@ -78,9 +78,10 @@ Per-field accuracy is exact match after normalisation (Unicode composed, whitesp
 
 | model | prompt | impl | issuer | holder | number | issue | expiry | scope | signatory | doc | $/doc | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| *no live run recorded yet* | | | | | | | | | | | | |
+| claude-opus-5-5 | v1 | direct | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.83 | 0.94 | 0.78 | 0.0183 | 3578 |
+| claude-haiku-5-5 | v1 | direct | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.89 | 0.94 | 0.83 | 0.0005 | 2202 |
 
-Each row comes from a file under `eval/results/`, which also holds, per run, the null-handling precision and recall per field and every wrong case with what was predicted and what the gold says.
+Each row comes from a file under `eval/results/`, which also holds, per run, the null-handling precision and recall per field and every wrong case with what was predicted and what the gold says. Both runs were recorded on 2026-11-05 over eighteen cases; the Opus run cost 33 cents in total and the Haiku run under a cent. The floors in `eval/thresholds.json` sit just under these numbers, so a later run that does worse fails the eval.
 
 ## What went wrong and what changed
 
