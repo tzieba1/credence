@@ -85,7 +85,15 @@ Each row comes from a file under `eval/results/`, which also holds, per run, the
 
 ## What went wrong and what changed
 
-To be written as the evaluation produces failures.
+### Prompt v1
+
+Both models were wrong on the same two things and on nothing else. No call failed, no field was filled that should have been null or left null that should have been filled, the five scanned cases read as well as the text-based ones, the two non-certificates came back all null with an explanation in `notes`, and every date came back right, including the ones written out in words and the US and European orderings. All seven mistakes across both runs are in two text fields, and each is a disagreement about where a value ends.
+
+**The sentence's full stop.** The letter layout states the scope inside a sentence: "and found to comply for the following scope: Operation of wastewater treatment works at Tern Valley." The gold is the scope without the full stop, because the stop belongs to the sentence, not the value. Opus kept it on all three letters (`g05`, `g06`, `g13`); Haiku kept it on two (`g06`, `g13`) and dropped it on the third. The prompt says "copy text values as printed" and says nothing about punctuation that encloses a value, so the model has to decide, and it decided differently from the labeller and from one letter to the next. This is five of the seven mistakes.
+
+**The honorific.** Case `g02` is signed "Dr Samuel Achterberg" with "Technical Director" on the line below. The gold keeps the "Dr". Prompt v1 says "signatory: the name of the person who signed it, without title or honorific", so both models dropped it, and by the prompt's own instruction they were right. The prompt and the gold contradict each other, which is a labelling bug: one of them has to change, and until it does the number for this field measures the disagreement rather than the model.
+
+Neither mistake would trouble a person reading the record. Both trouble an exact-match metric, which is the point of having one: it finds the places where "the right answer" was never written down. What v2 changes, and what it measured, follows once it has run.
 
 ## How the eval works
 
