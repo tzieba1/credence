@@ -1,0 +1,752 @@
+{
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "implementation": "direct",
+  "live": true,
+  "started_at": "2026-11-05T07:43:39+00:00",
+  "summary": {
+    "cases": 18,
+    "document_accuracy": 0.8333333333333334,
+    "documents_correct": 15,
+    "failures": 0,
+    "total_cost_usd": "0.0092493",
+    "cost_per_document_usd": "0.00051385",
+    "latency_p50_ms": 2202,
+    "latency_max_ms": 3606,
+    "fields": {
+      "issuer": {
+        "accuracy": 1.0,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": []
+      },
+      "holder": {
+        "accuracy": 1.0,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": []
+      },
+      "certificate_number": {
+        "accuracy": 1.0,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": []
+      },
+      "issue_date": {
+        "accuracy": 1.0,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": []
+      },
+      "expiry_date": {
+        "accuracy": 1.0,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": []
+      },
+      "scope": {
+        "accuracy": 0.8888888888888888,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": [
+          "g06-letter-en-no-signatory",
+          "g13-scan-letter-fr-no-signatory"
+        ]
+      },
+      "signatory": {
+        "accuracy": 0.9444444444444444,
+        "present_precision": 1.0,
+        "present_recall": 1.0,
+        "wrong_cases": [
+          "g02-classic-en-long"
+        ]
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "g01-classic-en-iso",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Northgate Certification Services Ltd",
+        "holder": "Harwell Precision Engineering plc",
+        "certificate_number": "NCS-QMS-2024-0417",
+        "issue_date": "2024-03-14",
+        "expiry_date": "2027-03-13",
+        "scope": "Design and manufacture of machined aluminium housings for medical devices",
+        "signatory": "Margaret Okonkwo"
+      },
+      "gold": {
+        "issuer": "Northgate Certification Services Ltd",
+        "holder": "Harwell Precision Engineering plc",
+        "certificate_number": "NCS-QMS-2024-0417",
+        "issue_date": "2024-03-14",
+        "expiry_date": "2027-03-13",
+        "scope": "Design and manufacture of machined aluminium housings for medical devices",
+        "signatory": "Margaret Okonkwo"
+      },
+      "notes": "The standard certified is ISO 9001:2015, which is not a dedicated field in this schema and so is recorded here. The document gives 'Valid until' rather than an explicit expiry label; it is treated as the expiry date.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3160,
+      "output_tokens": 207,
+      "cost_usd": "0.0004195",
+      "latency_ms": 2590,
+      "request_id": "req_011CgjQYuvUt8Bfk2BshXw57"
+    },
+    {
+      "case_id": "g02-classic-en-long",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": false
+      },
+      "predicted": {
+        "issuer": "Albion Quality Assurance Institute",
+        "holder": "Fenwick & Dale Laboratories Limited",
+        "certificate_number": "AQAI/17025/2023/0882",
+        "issue_date": "2023-11-20",
+        "expiry_date": "2026-11-19",
+        "scope": "Calibration of pressure and temperature instruments",
+        "signatory": "Samuel Achterberg"
+      },
+      "gold": {
+        "issuer": "Albion Quality Assurance Institute",
+        "holder": "Fenwick & Dale Laboratories Limited",
+        "certificate_number": "AQAI/17025/2023/0882",
+        "issue_date": "2023-11-20",
+        "expiry_date": "2026-11-19",
+        "scope": "Calibration of pressure and temperature instruments",
+        "signatory": "Dr Samuel Achterberg"
+      },
+      "notes": null,
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3163,
+      "output_tokens": 133,
+      "cost_usd": "0.0003828",
+      "latency_ms": 1690,
+      "request_id": "req_011CgjQZ6bgHyzTgrNbcbvkm"
+    },
+    {
+      "case_id": "g03-table-en-us-numeric",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Great Lakes Product Safety Inc.",
+        "holder": "Marquette Industrial Controls LLC",
+        "certificate_number": "GLPS-E-2024-11932",
+        "issue_date": "2024-07-23",
+        "expiry_date": "2029-07-22",
+        "scope": "Industrial control panels, Type 4 enclosures, 600 V maximum",
+        "signatory": "Dana R. Whitfield"
+      },
+      "gold": {
+        "issuer": "Great Lakes Product Safety Inc.",
+        "holder": "Marquette Industrial Controls LLC",
+        "certificate_number": "GLPS-E-2024-11932",
+        "issue_date": "2024-07-23",
+        "expiry_date": "2029-07-22",
+        "scope": "Industrial control panels, Type 4 enclosures, 600 V maximum",
+        "signatory": "Dana R. Whitfield"
+      },
+      "notes": "The document also states the standard UL 508A, the holder address 1180 Industrial Parkway, Marquette, MI 49855, USA, and that the issuer is accredited by the National Accreditation Board, registration 0421. The schema has no fields for these, so they are recorded here. Dates were read as MM/DD/YYYY.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3154,
+      "output_tokens": 572,
+      "cost_usd": "0.0006014",
+      "latency_ms": 3261,
+      "request_id": "req_011CgjQZDqk9mrNgdhKeCt3q"
+    },
+    {
+      "case_id": "g04-table-en-mixed-dates",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Caledonian Standards Bureau",
+        "holder": "Strathmore Food Processing Ltd",
+        "certificate_number": "CSB-FS-23-00561",
+        "issue_date": "2023-09-18",
+        "expiry_date": "2026-09-17",
+        "scope": "Processing and packing of chilled ready meals",
+        "signatory": "Fiona MacLeod"
+      },
+      "gold": {
+        "issuer": "Caledonian Standards Bureau",
+        "holder": "Strathmore Food Processing Ltd",
+        "certificate_number": "CSB-FS-23-00561",
+        "issue_date": "2023-09-18",
+        "expiry_date": "2026-09-17",
+        "scope": "Processing and packing of chilled ready meals",
+        "signatory": "Fiona MacLeod"
+      },
+      "notes": "The certified standard, BRCGS Food Safety Issue 9, has no field in this schema and is not captured. The signatory's role, Scheme Manager, was omitted as a title. The issue date was printed as 18/09/2023 and read as day/month/year.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3121,
+      "output_tokens": 432,
+      "cost_usd": "0.0005281",
+      "latency_ms": 2372,
+      "request_id": "req_011CgjQZTpsDPbWfegnQBZyU"
+    },
+    {
+      "case_id": "g05-letter-en-no-expiry",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Meridian Testing & Certification",
+        "holder": "Oakridge Composites Corporation",
+        "certificate_number": "MTC-2022-7730",
+        "issue_date": "2022-05-26",
+        "expiry_date": null,
+        "scope": "Type approval of glass-fibre reinforced pressure vessels, series OV-200",
+        "signatory": "Priya Natarajan"
+      },
+      "gold": {
+        "issuer": "Meridian Testing & Certification",
+        "holder": "Oakridge Composites Corporation",
+        "certificate_number": "MTC-2022-7730",
+        "issue_date": "2022-05-26",
+        "expiry_date": null,
+        "scope": "Type approval of glass-fibre reinforced pressure vessels, series OV-200",
+        "signatory": "Priya Natarajan"
+      },
+      "notes": "The document header is dated May 29, 2022, but the certificate itself states it was issued on May 26, 2022, so issue_date uses May 26. Expiry date is null because the certificate states it does not expire. The standard EN 13923:2006 is named in the text but has no field in the schema, so it appears only here: assessed against EN 13923:2006.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3189,
+      "output_tokens": 461,
+      "cost_usd": "0.0005494",
+      "latency_ms": 2836,
+      "request_id": "req_011CgjQZdxZXSjqYq4nFyJnC"
+    },
+    {
+      "case_id": "g06-letter-en-no-signatory",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": false,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Westbrook Environmental Registrars",
+        "holder": "Tern Valley Water Services",
+        "certificate_number": "WER/14001/0093",
+        "issue_date": "2024-01-29",
+        "expiry_date": "2027-01-28",
+        "scope": "Operation of wastewater treatment works at Tern Valley.",
+        "signatory": null
+      },
+      "gold": {
+        "issuer": "Westbrook Environmental Registrars",
+        "holder": "Tern Valley Water Services",
+        "certificate_number": "WER/14001/0093",
+        "issue_date": "2024-01-29",
+        "expiry_date": "2027-01-28",
+        "scope": "Operation of wastewater treatment works at Tern Valley",
+        "signatory": null
+      },
+      "notes": "The document states it is issued electronically and valid without signature, so no signatory is named. The document date of 1 February 2024 differs from the certificate issue date of 29 January 2024; the issue date field uses the date stated for the certificate itself.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3165,
+      "output_tokens": 193,
+      "cost_usd": "0.000413",
+      "latency_ms": 2075,
+      "request_id": "req_011CgjQZr4qQTsxNTjP7k969"
+    },
+    {
+      "case_id": "g07-classic-es-long",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Instituto Ibérico de Certificación S.A.",
+        "holder": "Talleres Mecánicos Arganda S.L.",
+        "certificate_number": "IIC-9001-2024-2210",
+        "issue_date": "2024-04-16",
+        "expiry_date": "2027-04-15",
+        "scope": "Fabricación de componentes metálicos por mecanizado y soldadura",
+        "signatory": "Carmen Villalobos Prieto"
+      },
+      "gold": {
+        "issuer": "Instituto Ibérico de Certificación S.A.",
+        "holder": "Talleres Mecánicos Arganda S.L.",
+        "certificate_number": "IIC-9001-2024-2210",
+        "issue_date": "2024-04-16",
+        "expiry_date": "2027-04-15",
+        "scope": "Fabricación de componentes metálicos por mecanizado y soldadura",
+        "signatory": "Carmen Villalobos Prieto"
+      },
+      "notes": "The certificate attests conformity with the standard ISO 9001:2015, which has no dedicated field in this schema.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3199,
+      "output_tokens": 502,
+      "cost_usd": "0.0005709",
+      "latency_ms": 2613,
+      "request_id": "req_011CgjQZzwNqyAddUFfXqjYK"
+    },
+    {
+      "case_id": "g08-table-fr-long",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Bureau Rhodanien de Certification",
+        "holder": "Ateliers Chauvet et Fils SAS",
+        "certificate_number": "BRC/45001/2023/118",
+        "issue_date": "2023-06-21",
+        "expiry_date": "2026-06-20",
+        "scope": "Conception et fabrication de systèmes de levage industriels",
+        "signatory": "Étienne Rousseau"
+      },
+      "gold": {
+        "issuer": "Bureau Rhodanien de Certification",
+        "holder": "Ateliers Chauvet et Fils SAS",
+        "certificate_number": "BRC/45001/2023/118",
+        "issue_date": "2023-06-21",
+        "expiry_date": "2026-06-20",
+        "scope": "Conception et fabrication de systèmes de levage industriels",
+        "signatory": "Étienne Rousseau"
+      },
+      "notes": null,
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3140,
+      "output_tokens": 136,
+      "cost_usd": "0.000382",
+      "latency_ms": 1716,
+      "request_id": "req_011CgjQaC6qj6CwxsBvotzPX"
+    },
+    {
+      "case_id": "g09-card-en-logo",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Southern Cross Compliance Pty Ltd",
+        "holder": "Kestrel Avionics Pty Ltd",
+        "certificate_number": "SCC-AS-2025-0071",
+        "issue_date": "2025-02-17",
+        "expiry_date": "2028-02-16",
+        "scope": "Maintenance of avionics assemblies for fixed-wing aircraft",
+        "signatory": "Hamish Teague"
+      },
+      "gold": {
+        "issuer": "Southern Cross Compliance Pty Ltd",
+        "holder": "Kestrel Avionics Pty Ltd",
+        "certificate_number": "SCC-AS-2025-0071",
+        "issue_date": "2025-02-17",
+        "expiry_date": "2028-02-16",
+        "scope": "Maintenance of avionics assemblies for fixed-wing aircraft",
+        "signatory": "Hamish Teague"
+      },
+      "notes": null,
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3151,
+      "output_tokens": 142,
+      "cost_usd": "0.0003861",
+      "latency_ms": 1919,
+      "request_id": "req_011CgjQaKUMUZzTKeNdzWTgE"
+    },
+    {
+      "case_id": "g10-classic-en-multipage",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Northgate Certification Services Ltd",
+        "holder": "Hollins Medical Devices Ltd",
+        "certificate_number": "NCS-MD-2024-0902",
+        "issue_date": "2024-10-15",
+        "expiry_date": "2027-10-14",
+        "scope": "Design and manufacture of sterile single-use syringes",
+        "signatory": "Margaret Okonkwo"
+      },
+      "gold": {
+        "issuer": "Northgate Certification Services Ltd",
+        "holder": "Hollins Medical Devices Ltd",
+        "certificate_number": "NCS-MD-2024-0902",
+        "issue_date": "2024-10-15",
+        "expiry_date": "2027-10-14",
+        "scope": "Design and manufacture of sterile single-use syringes",
+        "signatory": "Margaret Okonkwo"
+      },
+      "notes": "The certificate attests conformity to ISO 13485:2016. The document is a three-page bundle: a cover letter from Thomas Greyling (Client Services Coordinator), the Certificate of Registration, and an annex listing three sites covered: 1. Head office and plant 1, 14 Mill Lane; 2. Plant 2 (assembly), Unit 7, Riverside Park; 3. Distribution centre, Avenida del Puerto 221. The annex names Marcus Lindqvist as lead auditor. The signatory field is taken from the certificate page, not the cover letter.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 6754,
+      "output_tokens": 632,
+      "cost_usd": "0.0009914",
+      "latency_ms": 3117,
+      "request_id": "req_011CgjQaTgxqdMKyqHwsnBou"
+    },
+    {
+      "case_id": "g11-scan-classic-en",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Pennine Assessment Services",
+        "holder": "Brackenfield Plastics Ltd",
+        "certificate_number": "PAS-Q-2023-3348",
+        "issue_date": "2023-08-24",
+        "expiry_date": "2026-08-23",
+        "scope": "Injection moulding of thermoplastic components",
+        "signatory": "Rebecca Thwaite"
+      },
+      "gold": {
+        "issuer": "Pennine Assessment Services",
+        "holder": "Brackenfield Plastics Ltd",
+        "certificate_number": "PAS-Q-2023-3348",
+        "issue_date": "2023-08-24",
+        "expiry_date": "2026-08-23",
+        "scope": "Injection moulding of thermoplastic components",
+        "signatory": "Rebecca Thwaite"
+      },
+      "notes": "The document states the certificate is assessed against ISO 9001:2015. The standard is recorded in the body text rather than in a dedicated field, so it is noted here.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 2979,
+      "output_tokens": 177,
+      "cost_usd": "0.0003864",
+      "latency_ms": 1657,
+      "request_id": "req_011CgjQah1tsBpWJ81sc3mfn"
+    },
+    {
+      "case_id": "g12-scan-table-es",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Certificadora del Levante S.L.",
+        "holder": "Conservas Mar Menor S.A.",
+        "certificate_number": "CL-22000-2024-0366",
+        "issue_date": "2024-05-30",
+        "expiry_date": "2027-05-29",
+        "scope": "Elaboración y envasado de conservas de pescado",
+        "signatory": "Jorge Martínez Soler"
+      },
+      "gold": {
+        "issuer": "Certificadora del Levante S.L.",
+        "holder": "Conservas Mar Menor S.A.",
+        "certificate_number": "CL-22000-2024-0366",
+        "issue_date": "2024-05-30",
+        "expiry_date": "2027-05-29",
+        "scope": "Elaboración y envasado de conservas de pescado",
+        "signatory": "Jorge Martínez Soler"
+      },
+      "notes": "The norm ISO 22000:2018 is stated in the document under Norma; no separate field exists for it, so it is recorded here. Signatory title Director Técnico omitted per instructions.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 2979,
+      "output_tokens": 192,
+      "cost_usd": "0.0003939",
+      "latency_ms": 1507,
+      "request_id": "req_011CgjQap8H62nkqF7rYqZ5T"
+    },
+    {
+      "case_id": "g13-scan-letter-fr-no-signatory",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": false,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Office Atlantique de Conformité",
+        "holder": "Chantiers Navals de Saint-Brieuc",
+        "certificate_number": "OAC-2024-0510-M",
+        "issue_date": "2024-09-19",
+        "expiry_date": "2027-09-18",
+        "scope": "Construction et réparation de coques en acier.",
+        "signatory": null
+      },
+      "gold": {
+        "issuer": "Office Atlantique de Conformité",
+        "holder": "Chantiers Navals de Saint-Brieuc",
+        "certificate_number": "OAC-2024-0510-M",
+        "issue_date": "2024-09-19",
+        "expiry_date": "2027-09-18",
+        "scope": "Construction et réparation de coques en acier",
+        "signatory": null
+      },
+      "notes": "Signatory is null: the document states it is delivered electronically and valid without signature. Marc Lefèvre is named as Auditeur principal (lead auditor), not as signatory. The document date 22/09/2024 is not the issue date; the certificate states it was issued on 19/09/2024. The certificate attests conformity to ISO 9001:2015. The annex on page 2 lists the covered sites: 1. Siège et atelier 1, Unit 7, Riverside Park; 2. Atelier 2 (assemblage), Avenida del Puerto 221; 3. Centre de distribution, Quai des Ormes 3.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 4553,
+      "output_tokens": 825,
+      "cost_usd": "0.0008678",
+      "latency_ms": 3606,
+      "request_id": "req_011CgjQavbE5tT34Pik7qxuw"
+    },
+    {
+      "case_id": "g14-scan-card-en",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Cascadia Safety Certification Corp.",
+        "holder": "Willamette Lift Systems Inc.",
+        "certificate_number": "CSC-2025-1187",
+        "issue_date": "2025-01-21",
+        "expiry_date": "2026-01-20",
+        "scope": "Annual inspection of passenger elevators, units 1 to 6, Pioneer Tower",
+        "signatory": "Luis Ortega"
+      },
+      "gold": {
+        "issuer": "Cascadia Safety Certification Corp.",
+        "holder": "Willamette Lift Systems Inc.",
+        "certificate_number": "CSC-2025-1187",
+        "issue_date": "2025-01-21",
+        "expiry_date": "2026-01-20",
+        "scope": "Annual inspection of passenger elevators, units 1 to 6, Pioneer Tower",
+        "signatory": "Luis Ortega"
+      },
+      "notes": "The certificate cites the standard ASME A17.1, which has no schema field, so it is recorded here. Dates were printed as MM/DD/YYYY and converted to ISO 8601.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 2979,
+      "output_tokens": 348,
+      "cost_usd": "0.0004719",
+      "latency_ms": 2118,
+      "request_id": "req_011CgjQbC49CuqBbi3Jzq6vQ"
+    },
+    {
+      "case_id": "g15-classic-en-dotted",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Baltic Conformity Assessment OÜ",
+        "holder": "Nordhavn Marine Electronics A/S",
+        "certificate_number": "BCA-EMC-2024-0458",
+        "issue_date": "2024-11-27",
+        "expiry_date": "2029-11-26",
+        "scope": "Electromagnetic compatibility of shipboard navigation displays, model ND-7",
+        "signatory": "Kristjan Põder"
+      },
+      "gold": {
+        "issuer": "Baltic Conformity Assessment OÜ",
+        "holder": "Nordhavn Marine Electronics A/S",
+        "certificate_number": "BCA-EMC-2024-0458",
+        "issue_date": "2024-11-27",
+        "expiry_date": "2029-11-26",
+        "scope": "Electromagnetic compatibility of shipboard navigation displays, model ND-7",
+        "signatory": "Kristjan Põder"
+      },
+      "notes": null,
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3199,
+      "output_tokens": 347,
+      "cost_usd": "0.0004934",
+      "latency_ms": 1819,
+      "request_id": "req_011CgjQbM5rwVPkiopzFwCiS"
+    },
+    {
+      "case_id": "g16-table-en-no-expiry-no-signatory",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": "Ridgeway Materials Testing Ltd",
+        "holder": "Coombe Quarries Ltd",
+        "certificate_number": "RMT-CA-2023-0204",
+        "issue_date": "2023-03-02",
+        "expiry_date": null,
+        "scope": "Conformity of crushed limestone aggregate, grade 20/40, batch 23-0881",
+        "signatory": null
+      },
+      "gold": {
+        "issuer": "Ridgeway Materials Testing Ltd",
+        "holder": "Coombe Quarries Ltd",
+        "certificate_number": "RMT-CA-2023-0204",
+        "issue_date": "2023-03-02",
+        "expiry_date": null,
+        "scope": "Conformity of crushed limestone aggregate, grade 20/40, batch 23-0881",
+        "signatory": null
+      },
+      "notes": "Expiry date is null because the document states 'This certificate does not expire.' No signatory is named; the document says it is issued electronically and valid without signature. The standard EN 12620:2002+A1:2008 is printed on the document but has no schema field, so it is recorded here: standard EN 12620:2002+A1:2008.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3134,
+      "output_tokens": 235,
+      "cost_usd": "0.0004309",
+      "latency_ms": 2182,
+      "request_id": "req_011CgjQbUufHXMJBTPGqk7t8"
+    },
+    {
+      "case_id": "n01-invoice-en",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": null,
+        "holder": null,
+        "certificate_number": null,
+        "issue_date": null,
+        "expiry_date": null,
+        "scope": null,
+        "signatory": null
+      },
+      "gold": {
+        "issuer": null,
+        "holder": null,
+        "certificate_number": null,
+        "issue_date": null,
+        "expiry_date": null,
+        "scope": null,
+        "signatory": null
+      },
+      "notes": "The document is not a certificate. It is an invoice (No. INV-2024-5523, dated 2024-06-03) from Northgate Certification Services Ltd to Harwell Precision Engineering plc for an ISO 9001:2015 stage 2 certification audit. It states that the certificate will be released on receipt of payment, so no certificate is present to extract from.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 3215,
+      "output_tokens": 335,
+      "cost_usd": "0.000489",
+      "latency_ms": 2222,
+      "request_id": "req_011CgjQbeDkYobGyhiayayei"
+    },
+    {
+      "case_id": "n02-scan-memo-es",
+      "correct": {
+        "issuer": true,
+        "holder": true,
+        "certificate_number": true,
+        "issue_date": true,
+        "expiry_date": true,
+        "scope": true,
+        "signatory": true
+      },
+      "predicted": {
+        "issuer": null,
+        "holder": null,
+        "certificate_number": null,
+        "issue_date": null,
+        "expiry_date": null,
+        "scope": null,
+        "signatory": null
+      },
+      "gold": {
+        "issuer": null,
+        "holder": null,
+        "certificate_number": null,
+        "issue_date": null,
+        "expiry_date": null,
+        "scope": null,
+        "signatory": null
+      },
+      "notes": "The document is an internal memorandum (MEMORANDO INTERNO) from the Dirección de Calidad to plant managers, dated 8 April 2025, about preparing for a renewal audit. It is not a certificate. It mentions certificate IIC-9001-2021-0877, which expires on 30 June 2025, but the memo itself does not attest anything about a holder, so all fields are null.",
+      "failure": null,
+      "stop_reason": "end_turn",
+      "input_tokens": 2979,
+      "output_tokens": 387,
+      "cost_usd": "0.0004914",
+      "latency_ms": 3081,
+      "request_id": "req_011CgjQboiks8SRor97UzzeV"
+    }
+  ]
+}

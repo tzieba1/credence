@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "n01-invoice-en",
+  "document_sha256": "1a3a4eaacfedee5c406a0d07d53f7bc811630560bd418afac281c36f76179244",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 2222,
+  "request_id": "req_011CgjQbeDkYobGyhiayayei",
+  "response": {
+    "id": "msg_011CgjQbeYbm1AqfnHemrZng",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSlwgKEAgTGAI4AUIIdGhpbmtpbmcSDCEA8SjgqaUiSttuoRoMdJhfpPk/WgxTLjIvIjBKYh2KdzF2ezYZRno4rOqKtDRvX95S9BgpWLKyA9YDQ2qEZSVZfqc+6aqazXyAisIqtAd8YhCMy8JLPIONUBeOxZtqHg7WLrRt+genaTZe7gd46KbPkFWebNXgzmSIlgV+utFDrifKRJYFJwx9J+XwCPONYcmF+adJ7LjuPkhHEs/kgIxbx8SQONihEBMZbSZtOfRcMebcB5E8Evj9xvcZ9N39Cr8y2SPPzkxP94ddEu7Uj1C193ekapcippQ5KPzV2baE1SpDWqWXWmcITgHWK3GecI31LCE8/daT8EqcqBzpQhIsUXlPiUFRxpG+cdRtRTAH3Mf0GsChvoo+1X1CyHMRV+IbRVd3j3reK+kJtHmUA17JQmHj5tmERMYUMjMv336/kZMvl084vq+whWVInKIaOyzyogKc57QWV6cA5P5Tm4IOH6lNSL1XoBS5s7uPU75eAva1+HNmpHA9Ng0MS+Wt65SeNySFzpteSbSw5lpzAEhT6pSmqHAk9CUrwy3Gl2oPrVJa5kJ3/ULlt0RTyNHv1nVSKw2eN/clVe9x3IhhgQKsGj3jjRmLyugWg+oI7sOKdXXEJW3AdqyHkRqeUTFcxDPSHAN6N/pxTXCutqEOh+aullJvZDS6oxUR/72tXa2CXIsbVKDyC4In3bF54kAtRcqVCwFrPBm837X9060c9cxIx3TvZS3TIPEbqocZgTL7B0xzxXOQ3p0xbu4ZOCOP9Ljy5mv1B69ql/fBfymHuMh/XrTX96olnzzbXOBqnXPBsaJSAYm7ZHP2cxV8Hg27LqMCjhtZiqZe581b61QUzcBE62qLCTA/dNzLFS9zvFWf3iD43E2gWDB5zC1XUrafH2I5SarutSC3T7uVaLB+oHsJMukuPPq+R9xPA8KtSQnwBpOk06KBJqUfa6ohtvu6Pg96ZlZsOdW5yXACXw/JPMOYFRniA0uA7P5E42uall0hONi3u25hVhZaYyk65sBKxOYy0YUys7PpiGIAlbu/iEpQJ+IYFsMqoLJ4Evtdjyd3NB0GsSYpYRTPFW0XQ7F87L5UsGSC9wtFg0Yel4v+DdNSDZr1sEl2caX3U9UbZUqd31eAjwOfnGfWL2/ElsVGOV5DDxrmWs9bxc3is6bJXGQufGRu9CXXoYk+T+uAKR90dwVEUSAf14b2CbKjvgyON7bGRsEaUdeGOcqOaALoj4JVYFm8TSyJnjcxHmiQf3SN4APWSisJm8G8m4H83CgVV6abLehMNapl8wTtUmnU1OGnD32zAL/+UcBnPW0/O2D4V1jbgceK5ph/lkfXEF+p/AaI/FEN3Y5FdfyCzlTS705SBGAYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\": null, \"holder\": null, \"certificate_number\": null, \"issue_date\": null, \"expiry_date\": null, \"scope\": null, \"signatory\": null, \"notes\": \"The document is not a certificate. It is an invoice (No. INV-2024-5523, dated 2024-06-03) from Northgate Certification Services Ltd to Harwell Precision Engineering plc for an ISO 9001:2015 stage 2 certification audit. It states that the certificate will be released on receipt of payment, so no certificate is present to extract from.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3215,
+      "output_tokens": 335,
+      "output_tokens_details": {
+        "thinking_tokens": 157
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

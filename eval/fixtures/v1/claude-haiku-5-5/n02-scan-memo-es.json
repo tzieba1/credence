@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "n02-scan-memo-es",
+  "document_sha256": "63e7036086ee36ed897227d5d9890d45f98367bb311ce8411359bc98f2bc6763",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 3081,
+  "request_id": "req_011CgjQboiks8SRor97UzzeV",
+  "response": {
+    "id": "msg_011CgjQbp7Zteht6hXYJwA1h",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSlgkKEAgTGAI4AUIIdGhpbmtpbmcSDGIJWSvzfJx0GADkaBoMbZEYQStoBSW61OGJIjD2juCPDwHZPlX0iAqv6sdpXtkW7Og0eMrxTkHpLf85Q/5thmR4baCPrT6qasttq2sqswgQ6RSNzzHWN3bcaN/9Q8A2YPVoFw/8Su+5RTaoxY+k5Y8ABZwy3z2p3+QYN5AuDyFmejff9BG/9d4alIQnom4UlBcJpfVcOy3M1giYJ7xzutlg4ZfmCdFUEthdPEPaP9xgZ4UH1y3BeJv3X3WGWobuhkyHC62HDcatvAWvBfna2Q3wkrJnGaMx1HuoqBHOIv6+aBh+85ANkncQNFEKMP+o3F6rUalrgCBkc+IdKBacfBOMZI2ThhZdGlH+x0pv19PvkMOCtnooxBL6+tKgX07g5LvhQfNA9UqUJ0DUm1i0k/4a8KuKMiElC4/fmVvU45WlPpwz72xlQeRZG7BX200qrRrPDlk9slbAnCdwqiFpR+rYcq/zBV4qnWgRl6ZnZpj7t4dUV98iJo09qnXzbHqQSQN8GU0DQkcZctEZsD+m7K/h0tPo0QE0vLtqfEarGO/9VG4tEEHl0u019kevHNj5K491+lfLGOLijGCH60Xqu1Oy3lwYAp2aRYPI8vnLlHZj7POtCBIqM6cDfDZmLmiJ9uV0zlEwdjpjgz8sBWr3uvXw40yO+eTIuvv83otAoPiKz1ej2imnaOHHwE0Vex12MU1/UgduwfMMoArsH3JiMozTZBqMC8OMBrXXbv2Rl3e9sRRqlZf6kcJ/SIxGYu7nkLTVvv7fsIscfVu2BlOFJRhM0+W0Ro/fLGr8DY9G50ftO3rlTxQ3LQILpX5g4Tt5XIhtwSWWQFYTx2JyunKc6yVxerN1KensKbGIUb5cTXg0vHCkdwpX5u88z67JyPoYIHUGSS0suivd0v7W11RFsQH5JtqLxpbLGpTUeygpKkFOXE6uGzUo2A9aEcjBFTR5xaMSJM2/R9ktqVaSB/fk2aRb58lQO2DIYJxBwrnqp2NXXE9f60TOzX8t8u2K1twYlCl1mx7Y6uyQ5q4ET5uuZ4ZF12TQuaHLT0pR/pwk5/7fPj/5iMNcA4Thf1RASssj6/UEVxCPI85MVncICqDXSPYFlxY8vyryKxu5Kj0LbjEzvvQvgVpfxwQyPS+WtKqMqnFzIpmKzBQ1p1bBf9Jc4SNS1rAIAmh53PiAKXMmi94Ix1MROZsXAUcvLnpWP/7IuY/xL2dnkS1nO5CM7tRr2EHKuqbPmjfI+rZNSR/mCi5BaACr0TtGdRyM842vuc13fMu0mFd5VVCAFTrevvn7rhIuZ66gT6LK/OHNP85VjLhvNx4+hJ0WQFtSGzCZywHCy8/SsYgu8GtJefqY+q5mwFJdzp7dQfyMa0MDiGGMOd8Ho4WjWXAGoU2GsAgJBCIxOuLwTHFTfwX63hpf7orOBfxPRAIOfKvxkap5DXTRlJAg5Nvq/1/Srg0A5yLLlz7CEG66hzSgkI/P69ppzt87sr6xnORveq5bmFOGUMFCyAlTokK6g6oMzLqpV+bZrWfWthHTGAE=",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":null,\"holder\":null,\"certificate_number\":null,\"issue_date\":null,\"expiry_date\":null,\"scope\":null,\"signatory\":null,\"notes\":\"The document is an internal memorandum (MEMORANDO INTERNO) from the Dirección de Calidad to plant managers, dated 8 April 2025, about preparing for a renewal audit. It is not a certificate. It mentions certificate IIC-9001-2021-0877, which expires on 30 June 2025, but the memo itself does not attest anything about a holder, so all fields are null.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 2979,
+      "output_tokens": 387,
+      "output_tokens_details": {
+        "thinking_tokens": 199
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

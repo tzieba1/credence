@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g04-table-en-mixed-dates",
+  "document_sha256": "0da5cf98083280d3bb192c8b7f47850f19f2fde2e38c7ed2f0cef940a0e0bb0a",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 2372,
+  "request_id": "req_011CgjQZTpsDPbWfegnQBZyU",
+  "response": {
+    "id": "msg_011CgjQZU8EMVBPR3cBNDpsx",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSwggKEAgTGAI4AUIIdGhpbmtpbmcSDP2VNrKUuf/z4GGCiBoMY8TgvivCK/WDz1X8IjDMvXOvfhuZKN5b+YopPy2wBypnnA9eNwtfXxaTF1OhC6ib+009JdGEUqS1IIbFO9Mq3wcyWyrbHDIofwHSdRjKmOP6A8HhUMpNpdhtRzJo2iHhPX3kLDrOoQ3d5rovxOedeMP9YKflNh68zb8vLbYmDLpR0tb+X7702aco0Pa+Y6/gjlwumE/jkNo3cNawJ1i152sy/TbBXBLZUUoBBh+dO1vdmstNy+DiAhgs5IxqBgcbIVQ8HB7Xe/EQIoGruAm9lgx7nv3fk6BYxJsQSmx5CKkYR5ZDxORWyMh4yt3ibHYWlJkb6X/yNCdQb9E751nWOv0r5GF3LsGmek38fNnQUMT2CL5I7m+XYBM0sI2jTTTJ3Tcwe20jxh9M0sO+2hC366e7MO46q+UvFPGkByxgaJuHMHTGs4oE+ra6EbKwsGwab1AvjAqA7//5tICfF/Rog3/S5TkPRuWmySDSQUVsk0Gn80Vb+jqrFlMM6MMPmg1tB77bpcTfYqUMfDgXQF9kVUejtUWAjYHn9GCM8LWkyryWplw5J3yNhnaN0PNMJ11WEeJsRkFEureHw96+HPgx1uGUPOCVhyFg7Fr6kg3++S3dlGO3bPBzoqwbh6N7IaKzG069XOQIuSdpFIzORu9c4aKddTeG9RkzT6noCOf3kOTb1/QmOAEoGscJlRoXnkKKApp1jF58BlJ0E2/8o9Le/ka55Vj5iEYNaEnsh/F0mR1jFraRQviI0xtPvHJxfRvkX/yfcUjX6ZJelaHY2BO/JcEjYJAsMMG2Q5Qu25Pdcuua2tFzbhnj8iZCHSWyd6uOawDNOxy5TvfebNbNFsxBIIm/iLj6UVJ8E6w3Fnzq0F5IDFWPem5nwsEewWa6SLg+YfMskhDziTfUJxRMFrIxs+8YBB6UPxG0rfPPisU6dbMueWvaYJ9/r08xL6Wb0hpwN25+wPe/YfrvcS8VfoHPN6h8OfWfJD/rRUIAQQGZRvx2PCf3lO6G3YvOJAwmypIIU85TdPk/3L576qBpfrjvfWzGM+A6avQoBPAJhpyXY3RyG+nKlMLrCdDEE+PLdkQLOqpJpOuoOhHRH4WF4tPm2JsbTUGeAfYD+F6+U7BiWHKmE/eB6YlZm6KsyvCdqjJVsshvwDrPtWuf+GMApr8T78JGu3bCBrdv9G0R4j7kMf6fXWUCTqDeOIJkZ9eKHr2UdWLU+DZ58ZiiespgepBK8QX+A0TUzP4ipl/ejLkNPy4JCDE2Sfz3+3u3HTLurmf9gm/qZ/pHtNb9tUlB8F19rJSLkqLMmsxOhW+53pGOzH78EhbN+XRmb1+Y4l1IjpVP1unN3p54+x/ETFB4IsnxJTBFkhjrNB2raPO7PQbfLkw3lTO4+BvVj87ZeWoN3MQtGAE=",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Caledonian Standards Bureau\",\"holder\":\"Strathmore Food Processing Ltd\",\"certificate_number\":\"CSB-FS-23-00561\",\"issue_date\":\"2023-09-18\",\"expiry_date\":\"2026-09-17\",\"scope\":\"Processing and packing of chilled ready meals\",\"signatory\":\"Fiona MacLeod\",\"notes\":\"The certified standard, BRCGS Food Safety Issue 9, has no field in this schema and is not captured. The signatory's role, Scheme Manager, was omitted as a title. The issue date was printed as 18/09/2023 and read as day/month/year.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3121,
+      "output_tokens": 432,
+      "output_tokens_details": {
+        "thinking_tokens": 223
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

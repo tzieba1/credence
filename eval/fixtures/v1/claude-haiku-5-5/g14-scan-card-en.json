@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g14-scan-card-en",
+  "document_sha256": "62f3e992a44099d9c34b6ae8c99f505d336465fea4b571d76c891851d9b0eac0",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 2118,
+  "request_id": "req_011CgjQbC49CuqBbi3Jzq6vQ",
+  "response": {
+    "id": "msg_011CgjQbD6u9tmW6r3NUmL2z",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSgQcKEAgTGAI4AUIIdGhpbmtpbmcSDDEK0Jaz81v71f2EhhoMfgn66goB5ANcHC8FIjB16nqtnB1V/O+M5Y/RZqFqduGmb6yyUVZwuN+j4UF//4o1gEMSOFY7fe+lM2ZeJRUqngYu614qd1q7qSnrpyUwe5I5gKPSvjD95/e0P7hhezchSDpFfqVJyeNemQfkIbeCo3IbsYpg81rOfvdHVCNsPOrIyS2YL63SW7JvI6zzG2gMfB0Bz4GNHrGE+Nyzc/B66zB86rlmZHhOUFhkkbfGXIZ961ZWWdY3od5SHvMM0iqxTgd//c+sU3w4yC/T0adVtbhs/Eqpqw4ZOD+k5Qz0IJ1Zoz676cWRdd3GsbrVSHPo/d3RMuu29TJmgxw16QisFsz+6NDVzCqNIayvth8QIFf0wG/ZJ9WfeG9USbw3XHe2DErr32TmipThB4VP/omBZc3EKpQmM9PdUodhhVNifnwlgWxYKtu3K/Qbir/oVeir1prZBoxXvOaNkwEziPyXxwHhkWtuY8mlqmTo3HvxJpRGDB7rgERDkOH/jnpqq2jp++nlM3IzhqKeAc3O2BK8d3hhFZAR3w4FXO+a8RxWOZkd8OSBhOSznFXGfRODc9iAKNOiLv+5DDUFpup+vm9yfFl901c2yflik2n5KN1DcZ510AulYjd+MT2U92uZmN1LEGXhCLgxP4Hd2tnU5sigKkjqX5fbKymyfYYfFTI/ZqP2F22KgXwbrtBpZLYAEcygXz8b6MLcAU/S85tTR7i/zaTbp/EuMV5bQeDKLIyK3jpEq8IwaWVE+dZQbf01q5y83NhDWps4kQdHd3QMf/cR2kNf7uzXJDIy7jd6iARcG+2+ezXfYOrj4wj5IGtH5A0kGetyhO6ytWX3tpkGOPkST3in0aEcnhEJvSE/BQGAUxq1pVY7+6z7wsSm6pkNnsaAgG4E1s08hWEkuPdwAPqbMMXt5fEwG8N3YvmhcsEsASbyCzpntQk6ZqVWO6xFJddrz9h2r2Ot4uJC1RqWjzEHyigucY66f4DJ8rh5lScmk7eXIu4lY1Nu2t9IQYqQDEQv1/oP/NTAocoRhkivD8fFdA7VN4MkWaW+f5qACjcdVyEYPwH2u7UOO5C81iq5M2aOV0G/4IFPkF8dqTY03HWiKq5ZHl7Ku9Izva08wuDcOlL8zrbVja2yGQKp4Q8RPloYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\": \"Cascadia Safety Certification Corp.\", \"holder\": \"Willamette Lift Systems Inc.\", \"certificate_number\": \"CSC-2025-1187\", \"issue_date\": \"2025-01-21\", \"expiry_date\": \"2026-01-20\", \"scope\": \"Annual inspection of passenger elevators, units 1 to 6, Pioneer Tower\", \"signatory\": \"Luis Ortega\", \"notes\": \"The certificate cites the standard ASME A17.1, which has no schema field, so it is recorded here. Dates were printed as MM/DD/YYYY and converted to ISO 8601.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 2979,
+      "output_tokens": 348,
+      "output_tokens_details": {
+        "thinking_tokens": 140
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

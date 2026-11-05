@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g11-scan-classic-en",
+  "document_sha256": "096cbd815ba96d12429a295813c52fb390bd4a8b9f04f58c1faf4b28b17aca59",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 3807,
+  "request_id": "req_011CgjQ5FzSkbJqC5n9vaji8",
+  "response": {
+    "id": "msg_011CgjQ5GPWbX4jKY9krTUmC",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Pennine Assessment Services\",\"holder\":\"Brackenfield Plastics Ltd\",\"certificate_number\":\"PAS-Q-2023-3348\",\"issue_date\":\"2023-08-24\",\"expiry_date\":\"2026-08-23\",\"scope\":\"Injection moulding of thermoplastic components\",\"signatory\":\"Rebecca Thwaite\",\"notes\":\"Certificate of Registration attesting conformity to ISO 9001:2015. Signatory's role: Certification Director, for and on behalf of Pennine Assessment Services.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 2979,
+      "output_tokens": 182,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

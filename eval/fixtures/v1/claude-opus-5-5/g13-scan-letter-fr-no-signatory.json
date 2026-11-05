@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g13-scan-letter-fr-no-signatory",
+  "document_sha256": "27d81eaf8cb5d475517d1d08d1a9b2204cde4092f5034f5448938fdd1f0e9caa",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 5939,
+  "request_id": "req_011CgjQ5sX7eWnpK7PCuKqoA",
+  "response": {
+    "id": "msg_011CgjQ5ssh5YL5bgprqcHNP",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSoQkKEAgTGAI4AUIIdGhpbmtpbmcSDHKQI2OJwWjG6rR4HRoMrUV1DnfJE+M1wO7nIjDheJtrwQx5omXd4wNzQ5YMHyfK6ngwCRsW4gXD1UC11nDyr7reWaTxp9wCzEb1qBAqvgjkz4K8O5LnYRg5NDZdNAgvt6rtS2lHjK5YjhSILd4/H6F4yKYss+tG7pIT7FZZ6PGmaDm9CIabnsihx0BDDeJgO/NgylQU6LkBL2sR+6RddARCMpFeN+eJ17mXJKp8Sm7FaiOQqWYICvXjeiED7lcz9voCw1GIhB7hsVG+3LpN1kE8JjN6GxLao9A+fqd8GRUUreTza4GBosTUayfjGR8QIWJdr1tjHoTsnrYp9Lfs1c3BEyandGAMpD44sHbf20713/jBBFRL8eUULY+XsA4lcTXgk0i3cLA5rJh9R+XAvOJQiyBHAR/crzpXflAJsyTH6WXD5F3Ua6LhNk3F+wGn21h5GttOVmgACQhd7wRDYKV6s/LE//n0s0HvrQVXCvvq0EXGiuTBEh8BCn+adjDUXr1vj4CaUCHHC31o3puR5Z39UnHkElSbnnpzJh5QrRmfZAUaoh4ljoM0YCwAvml/jxEjopUGit5jvvsXGPdq6qQnX+aJ6AMg7EVRZQHcvO1rqLFBfhAZMxNizIQFXz8//aDB4PYzsbx3xh/SOqkOWC45qqR/vh4q43Ww2nI5PUOMs8kV5KySfg36uG+hvxBQ0VrChJR6Tm1g2Pj3pvc8BkJ4jeNMsJAkGNqVjaR7drC35xPCaXMYhtNImPZZVq1AHnru/61N2+jMbC6GUVf+4Ld2mSCX6pXcPNcuBhZoiTRMcdUBo6pE7+PPjVE9Eg45BdxdThFslLhCRwopAani1oVGNhkOhKC45gMq9Yfn6tTWbkUdmDHF8jfwTykX8pOXrtTkVaJV6YI49AGKh3O5nON0bnKNcYy/tAo4JvWzO7nUsALP4Q5F3K23egix/ck2DSB+7RjNHB2uhRx1dsB4djPcehJcKkXoOf6a5zXbmHfvWTc7xIxke3eovuzktjfZOTA4ZoCPBR8KT/QgrgCX/05bJ4tksHgZEXBmdTqIrdaBm6maNjqG6t9J4t9s77reUU19qH84p4KWGQk3pCvWOEqV42PHpEv7qx8UUryply/rL+aWBS1EW2LYkxGllYYIY3X32acGAG/6z3dif/kbsB/WRlPCLA/brPaw0oTc8jieaGXVVPE0ruyk0xLLrV8KUaF80w1X627byrO4Fk3igbcMwnEZYGicmmMgaAzrppawf1pfbIT4iuHa+t0myuGPhpXw/9uE3f9JGmdWZhJ3lmwd8t3CtlyUwYcm7VEJwd2YBzNGTAEqsTJxQWPLkLbVlPPaEnFFSB4na1zMcVJNnOirWewhMHYiXUXC+VrqdblawMIsfyK7W4ytaxAdWCeEJdxP9mhCcLdofABSZJCQ44bOX2HMtJQMkA1D2wzHnT4miJNRsWh9+8wsZsRINBhqeLWjzl5P9+5MkhPiGdZoAUdSEtBD+GuDrv74p7fG16Bj/lzQuBopS55ko3C3VWDru74sdWy1151/Ei1hnLEYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Office Atlantique de Conformité\",\"holder\":\"Chantiers Navals de Saint-Brieuc\",\"certificate_number\":\"OAC-2024-0510-M\",\"issue_date\":\"2024-09-19\",\"expiry_date\":\"2027-09-18\",\"scope\":\"Construction et réparation de coques en acier.\",\"signatory\":null,\"notes\":\"Standard: ISO 9001:2015. The 'Date: 22/09/2024' at the top of page 1 is the document date; the issue date used is 19/09/2024, stated as 'délivré le'. The annex lists the sites covered by the scope: 1. Siège et atelier 1 – Unit 7, Riverside Park; 2. Atelier 2 (assemblage) – Avenida del Puerto 221; 3. Centre de distribution – Quai des Ormes 3. Signatory is null because the certificate states 'Délivré par voie électronique et valable sans signature.' The annex names 'Auditeur principal : Marc Lefèvre', but he is the lead auditor, not a signatory.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4553,
+      "output_tokens": 568,
+      "output_tokens_details": {
+        "thinking_tokens": 214
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

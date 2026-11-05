@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g13-scan-letter-fr-no-signatory",
+  "document_sha256": "27d81eaf8cb5d475517d1d08d1a9b2204cde4092f5034f5448938fdd1f0e9caa",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 3606,
+  "request_id": "req_011CgjQavbE5tT34Pik7qxuw",
+  "response": {
+    "id": "msg_011CgjQavtLSo4QaA14oAozm",
+    "container": null,
+    "content": [
+      {
+        "signature": "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",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Office Atlantique de Conformité\",\"holder\":\"Chantiers Navals de Saint-Brieuc\",\"certificate_number\":\"OAC-2024-0510-M\",\"issue_date\":\"2024-09-19\",\"expiry_date\":\"2027-09-18\",\"scope\":\"Construction et réparation de coques en acier.\",\"signatory\":null,\"notes\":\"Signatory is null: the document states it is delivered electronically and valid without signature. Marc Lefèvre is named as Auditeur principal (lead auditor), not as signatory. The document date 22/09/2024 is not the issue date; the certificate states it was issued on 19/09/2024. The certificate attests conformity to ISO 9001:2015. The annex on page 2 lists the covered sites: 1. Siège et atelier 1, Unit 7, Riverside Park; 2. Atelier 2 (assemblage), Avenida del Puerto 221; 3. Centre de distribution, Quai des Ormes 3.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4553,
+      "output_tokens": 825,
+      "output_tokens_details": {
+        "thinking_tokens": 498
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

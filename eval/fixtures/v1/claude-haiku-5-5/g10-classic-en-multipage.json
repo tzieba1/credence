@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g10-classic-en-multipage",
+  "document_sha256": "84cf863751d777727b9ce0374913fa571a1a8c3653bc10ca7bdb8f040889b4a5",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 3117,
+  "request_id": "req_011CgjQaTgxqdMKyqHwsnBou",
+  "response": {
+    "id": "msg_011CgjQaU42yNkKb8g7ZQLDj",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQS0woKEAgTGAI4AUIIdGhpbmtpbmcSDMNU3ER49rEgWpmP9hoMGNalW4GhawEIiY6JIjDr4HEQTjl9a8tzzVKmXwj1Il5GlgjJ72X3FeEbWxi3WEa8hXel2QcCHGwV0liecowq8AlK2YXPTj9XrMycltvEXNfj/lZocCDiqwEPVmVnmFXnReQ6pc+wBlbvuTussd6qv8tFIjW0QIj0qTtxk8yz6ORyHfJVe6nEq+DGGBfMlkWWE3Ana00IXAiIDehwJCiEGrCcgHGHp3HWBTfzJuF6DUSpq6zWlpVs6sio+mNgO9RKVr8R/Ll3ZrH2JGQXLwHo4s92oUYZBJgxdi/UvM29ZKUkQM+m8WSiMrUPhHRmyjiw3hlqG9+KTiT5+K8c9z+MNBzthG0AR0iMzSIvsHIJUMCX1cJjidkNyxSB5U4gYGyrltoIUxnV9ITaNUM+syS5vWGKGWqEsQS4hNqMFudnQXa1yn7KHfY7pKwGhV+VCAPJMC+FAyRAtcmRqN3PaJoB9zBKfBvOkZmJx6U2wG8QpE3fhS/9lRjjsfq10v+uVrSrHFFVl85vApSGAJ8bg3/lF5fuNlvtY1Pk/1Sgdh+S1DsJ8x2eTiq0965eK+mE6taSl1gJB7AFVLMdpfptRVGV1aEm151nspZAPARNQ77enUi/M5YGgtJOKfEKN1aaQaZYEviRbSXoMZdLvuaerYYolnxD+0Mf/jfJBpKWFd4ZuLKxnKqeTDi9lMqJEAldMsIdDph2U8msFDmH/4nzfXWsf5a9gqVAZO/3JzwNLZPN/yUoC60upV9ZqEvQCSfCwEp+6nOlCy/nR2EKZfMYvK5hxnClKxihZ6sYdF44dyD5DgBEg9MxSXkLn4SD8a0B3INaJVx047dTT4kC4Guq+KoIguyMiEyOPfRAY+a2L9b2c7ibflVD99cewKPxjMEKzxc723em8X0VPeDjL2rxyIQboMAp+L5XOjsojS2/FXykKDYVBr4g/M53BEms03UIKB0FBuYoi8u62/vlh//G7B1SiC785eM1plBQNIxzLE8paqzoDKeDVujDlbRtoahjx1nr1lg6AX2qF6gpzGlGtyZBgDQaz4qX2oJiKWtog7laSTjsofKOeQtc8+w6xOvkJRDW/LT7fgq1zqKXvSMAOfWNEn1Fka7wSmKxuqUN9NzMqMIwTQTKInDDThUOad1U9m1Brmdx8IXfC7likn/gAU2HBMkNjBh1zSBJhkDmKSpgSpvYhVUU8hI5cPXGS2u7U6hemESqfNHj/hZVhMeP6/iAG1xqPU9lV1U6B654swWqvsybA+Yf1G5XdpwAU/jfM4/NllvvdRe+9Ho/lTsnlANW+HzLJLz3EdeV9A8fChN00imcgysBx8JXIJD/3d7c6AXfu8lgulny4KDG9/bfLdTJ/UeSfQChw9lAGB45366kkqxwFgBapx5SVlvj4CveSe7eM+KBnhFbPdI0MqTe/gSQFMEQtnBwR9CejZq+ZtSSVIahuBdi1BxpVqye12Vx07bj7b5q8/4GDDuMeGjBRJFIvrSJ81ViwZRnMCqBU45c1UPI0ufgrQm33Gm/y9Vj7fevmHzdRrssCHPgli/Y3YhkAmYpEMnQKZgQY5idguGAF0GUjaPBiQCJ7oaR+hJ9wRqbVtLwRPNDMP3G7RJc760GQBSV8VJHLg97J3T1XPUJasmPc2i9j0GftWToP9XhP72SqZfcrSUT1jBOqiZbD5ujUzhlXSrgbUl+G5VgqzZxLFC3Ec2nkfA41tAhD0FttPM7cCqtaChgsqiHH/xsHDWy9aNmo7zNqHf+WIWJvzEf1qaJGAE=",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Northgate Certification Services Ltd\",\"holder\":\"Hollins Medical Devices Ltd\",\"certificate_number\":\"NCS-MD-2024-0902\",\"issue_date\":\"2024-10-15\",\"expiry_date\":\"2027-10-14\",\"scope\":\"Design and manufacture of sterile single-use syringes\",\"signatory\":\"Margaret Okonkwo\",\"notes\":\"The certificate attests conformity to ISO 13485:2016. The document is a three-page bundle: a cover letter from Thomas Greyling (Client Services Coordinator), the Certificate of Registration, and an annex listing three sites covered: 1. Head office and plant 1, 14 Mill Lane; 2. Plant 2 (assembly), Unit 7, Riverside Park; 3. Distribution centre, Avenida del Puerto 221. The annex names Marcus Lindqvist as lead auditor. The signatory field is taken from the certificate page, not the cover letter.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 6754,
+      "output_tokens": 632,
+      "output_tokens_details": {
+        "thinking_tokens": 308
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

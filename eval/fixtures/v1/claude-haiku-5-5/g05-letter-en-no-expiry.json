@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g05-letter-en-no-expiry",
+  "document_sha256": "84604db840f784be65ad0619785b66f246f003a11be31f3b945a3a7915c6a21d",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 2836,
+  "request_id": "req_011CgjQZdxZXSjqYq4nFyJnC",
+  "response": {
+    "id": "msg_011CgjQZeJ9jTmfGfN2W1WG7",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQSpwkKEAgTGAI4AUIIdGhpbmtpbmcSDEtQcwIsVi0Y7xHbExoM4CjpIRLw3SnqjuqxIjC4e+IzmFc+QLaHM9pa1YgbdnSM2kdj4I/G5x5MoEvWBwTj/R18PBj/WRSDyTHax3UqxAi9NNPq/jHyYqggxJtS+bVqkVvsSXdEM7kZVHRhDW2f1klo8HPZw194zC4T+h6K/cqk3RC8UBbKm/EKAVON7nu3l7FEXL6TIR7NW5CCj6cz6S5trk5Wh3mZbuIQ1NmYB+a+8m3PfmjLI0O63zd83nTVSd3ad2GfhLfFRdzJn6Av1aiC7aKXG5uwMhIR02mDi92UvxKvqdwXBXtoWB4ZF9NzhZmAuxyhrSEeDPPbE8YQI9biorUNSmSjYQit7KwSf2hGXSVrCqW35RMT6z5G3Mm9YeMN95DiYEqA9jk62EhLL5LgOxyZlJSUeIKM4HtYsmTwXyyNmhx+fDkrkJFvOHhxCZ6Xh3TTKToWNm4U4SzlNjxk4H4GFBB8zi+WbSpDIEtk0DD6ElC7JfMy8wNP47BtB0dSBe9gGcwaNRiJesL3y4isRzEUKS3rSkN/UmOw7hOejrUvyQVyavx/VQLibfHPjJoZe6LMk53x2zkLKWe7prG6ySqczFblRU5ynrIMZRL8T/VmFNDnV+kTVFlrQ6qiuWk5fUlVRKw4QcpgIDXZtSHhYsOAIfCdCTTifrWzZMmpbJomlXK4QCa0o4YWQpREqFsXks2zGrdW+UpZe/CGd/tFGbYBptv8+8MWGZkJRd2eMIW/RQaP3heHr22Y+ku0naAfKKe5AUyK5T6oGvsClvtc+4T9ELh9+mP2CxxHEiUruhA9k1PtW8zvv79qFtroP314U0v1Me+eFWpxN9jwmADZOYoEuRrrTUjI+2jq5OgOKGGgbEi+j0u/MJo+RyJohTN8/hFCPu0G5vtfUMZdPmYs3FCJ4FZ3XybjVOwqIZGueDoyCQTUmPLr4S4YDpC3//1Ac9heeAAmkGOIn1WdSi8Rre0vf+MOJQtjprAD86oT4q1nLWM/jOl6oOcBARauijSdgHBF7f8vH6s0AASRMwDMvGpdNKU+55//LB+fEapawdBAn8pqW6o5Gq4KSSZmpRjQUAXnKUItVhIsf0sXEIqgaeY/jRm+76yFevfIivfC9jJCyiGP4K+s9prDdCkdWXjtl56uqqSNA5xY4RPoUsW7PMHCDQhZF5noGF0I6yoJnIlDBdLkUktypls41pen+CzwN6LHofK5nXWInLPE/YudaD5amoMuNbBeW55xDIQmEVc9XgZHeUM7UxLZEB1UzjGaSgaZE66dqzRyEUacgmdco8UDTXkUwDWFXeDw6vwLP8mQk0GDLAMyg4Wrdl7fZroBNHLCCP7fUG0j/rXytuRJtYjypZPcOjGGHdEPUiotL3BEQOdcJQqPbKMbIbR3izQCrfjuzvl9gdgE8VU5Z8ZkT32QcQ2eixcpMxJTZKKmt/vTqVh3UGB6Omc/Ix6zS0GTPkoQnP9nWzzy+ojz9/A8k8lpTaOwhin13iqq/S9ryeFsumnVZ/4rZvUpbZsAgvWczNS4mITuLwdjJw0/WlgfFtYYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Meridian Testing & Certification\",\"holder\":\"Oakridge Composites Corporation\",\"certificate_number\":\"MTC-2022-7730\",\"issue_date\":\"2022-05-26\",\"expiry_date\":null,\"scope\":\"Type approval of glass-fibre reinforced pressure vessels, series OV-200\",\"signatory\":\"Priya Natarajan\",\"notes\":\"The document header is dated May 29, 2022, but the certificate itself states it was issued on May 26, 2022, so issue_date uses May 26. Expiry date is null because the certificate states it does not expire. The standard EN 13923:2006 is named in the text but has no field in the schema, so it appears only here: assessed against EN 13923:2006.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3189,
+      "output_tokens": 461,
+      "output_tokens_details": {
+        "thinking_tokens": 222
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

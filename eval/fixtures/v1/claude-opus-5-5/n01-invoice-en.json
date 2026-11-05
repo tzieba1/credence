@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "n01-invoice-en",
+  "document_sha256": "1a3a4eaacfedee5c406a0d07d53f7bc811630560bd418afac281c36f76179244",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 3984,
+  "request_id": "req_011CgjQ759P4SQr4TJML28K6",
+  "response": {
+    "id": "msg_011CgjQ75SF1X3jNpc4HNM9M",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":null,\"holder\":null,\"certificate_number\":null,\"issue_date\":null,\"expiry_date\":null,\"scope\":null,\"signatory\":null,\"notes\":\"The document is not a certificate. It is an invoice (Invoice No. INV-2024-5523, dated 2024-06-03, due 2024-07-03) from Northgate Certification Services Ltd to Harwell Precision Engineering plc (reference PO 44819). It bills for an ISO 9001:2015 stage 2 certification audit (2 auditor days), GBP 2,880.00 including VAT. It states that the certificate will be released on receipt of payment, so the certificate itself is not included in this document.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3215,
+      "output_tokens": 227,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

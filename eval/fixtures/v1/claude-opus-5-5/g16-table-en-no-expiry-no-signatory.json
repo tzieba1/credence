@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g16-table-en-no-expiry-no-signatory",
+  "document_sha256": "f87ef6a40906daedcdc495c893bbcd980e108d370b13114a3875a3f9fc0f5061",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 3211,
+  "request_id": "req_011CgjQ6qReCaG9LvxKbQGSP",
+  "response": {
+    "id": "msg_011CgjQ6qqS6i7b3AJUSzTSE",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Ridgeway Materials Testing Ltd\",\"holder\":\"Coombe Quarries Ltd\",\"certificate_number\":\"RMT-CA-2023-0204\",\"issue_date\":\"2023-03-02\",\"expiry_date\":null,\"scope\":\"Conformity of crushed limestone aggregate, grade 20/40, batch 23-0881\",\"signatory\":null,\"notes\":\"Expiry date is null because the certificate states 'This certificate does not expire.' Signatory is null because the certificate was 'Issued electronically and valid without signature.' Standard: EN 12620:2002+A1:2008.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3134,
+      "output_tokens": 204,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

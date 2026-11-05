@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g05-letter-en-no-expiry",
+  "document_sha256": "84604db840f784be65ad0619785b66f246f003a11be31f3b945a3a7915c6a21d",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 3676,
+  "request_id": "req_011CgjQ3vMxf5tPRrQexF8Py",
+  "response": {
+    "id": "msg_011CgjQ3vjXs7eVVFJhWmrcd",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Meridian Testing & Certification\",\"holder\":\"Oakridge Composites Corporation\",\"certificate_number\":\"MTC-2022-7730\",\"issue_date\":\"2022-05-26\",\"expiry_date\":null,\"scope\":\"Type approval of glass-fibre reinforced pressure vessels, series OV-200.\",\"signatory\":\"Priya Natarajan\",\"notes\":\"Assessed against EN 13923:2006. The document header is dated May 29, 2022, but the text states the certificate was issued on May 26, 2022; the latter was used as the issue date. Expiry date is null because the certificate states it does not expire.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3189,
+      "output_tokens": 207,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

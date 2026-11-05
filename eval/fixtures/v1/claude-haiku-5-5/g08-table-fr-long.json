@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g08-table-fr-long",
+  "document_sha256": "04ab9e9194c4da125d39b6c384c08d3823ec612eca453eac5ac75050c25dd457",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 1716,
+  "request_id": "req_011CgjQaC6qj6CwxsBvotzPX",
+  "response": {
+    "id": "msg_011CgjQaCTB52Rz9DYS1bRwL",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Bureau Rhodanien de Certification\",\"holder\":\"Ateliers Chauvet et Fils SAS\",\"certificate_number\":\"BRC/45001/2023/118\",\"issue_date\":\"2023-06-21\",\"expiry_date\":\"2026-06-20\",\"scope\":\"Conception et fabrication de systèmes de levage industriels\",\"signatory\":\"Étienne Rousseau\",\"notes\":null}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3140,
+      "output_tokens": 136,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

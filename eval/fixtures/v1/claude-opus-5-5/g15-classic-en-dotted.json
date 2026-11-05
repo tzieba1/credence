@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g15-classic-en-dotted",
+  "document_sha256": "ea48972167a6e37e1e76eadce2e84e5dced94472ea62aeda1b76ba643fc6f59d",
+  "model": "claude-opus-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:36:51+00:00",
+  "latency_ms": 3451,
+  "request_id": "req_011CgjQ6aePZfSPZYzdB27wS",
+  "response": {
+    "id": "msg_011CgjQ6b2CsnyfnC78ZbHyn",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Baltic Conformity Assessment OÜ\",\"holder\":\"Nordhavn Marine Electronics A/S\",\"certificate_number\":\"BCA-EMC-2024-0458\",\"issue_date\":\"2024-11-27\",\"expiry_date\":\"2029-11-26\",\"scope\":\"Electromagnetic compatibility of shipboard navigation displays, model ND-7\",\"signatory\":\"Kristjan Põder\",\"notes\":\"Standard assessed against: IEC 60945:2002. Issuer accredited by the Estonian Accreditation Centre, certificate L123 (accreditation number, not the certificate number). Signatory's role: Lead Engineer.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-opus-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3199,
+      "output_tokens": 221,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

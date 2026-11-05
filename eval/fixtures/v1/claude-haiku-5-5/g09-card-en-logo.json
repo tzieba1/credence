@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "case_id": "g09-card-en-logo",
+  "document_sha256": "2c15178c11a0ffc1b0e0775699de51bdc6a27844861fad5d2f5afc121ecb50e8",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 1919,
+  "request_id": "req_011CgjQaKUMUZzTKeNdzWTgE",
+  "response": {
+    "id": "msg_011CgjQaKpSkTrQXdZZ8Evfb",
+    "container": null,
+    "content": [
+      {
+        "text": "{\"issuer\":\"Southern Cross Compliance Pty Ltd\",\"holder\":\"Kestrel Avionics Pty Ltd\",\"certificate_number\":\"SCC-AS-2025-0071\",\"issue_date\":\"2025-02-17\",\"expiry_date\":\"2028-02-16\",\"scope\":\"Maintenance of avionics assemblies for fixed-wing aircraft\",\"signatory\":\"Hamish Teague\",\"notes\":null}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3151,
+      "output_tokens": 142,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

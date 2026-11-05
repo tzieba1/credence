@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g15-classic-en-dotted",
+  "document_sha256": "ea48972167a6e37e1e76eadce2e84e5dced94472ea62aeda1b76ba643fc6f59d",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 1819,
+  "request_id": "req_011CgjQbM5rwVPkiopzFwCiS",
+  "response": {
+    "id": "msg_011CgjQbMRCeNQWpTpFKqJQy",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQShQgKEAgTGAI4AUIIdGhpbmtpbmcSDDaqR2ABRSQ1vzHlNRoMhd2aCdgJNPQNMWdOIjDwWQq4NTJiv2l1GNYQkS7anNMoud9KLs48oEhvDIhd6if9gZr9gEOGpZDcY8/tcp0qogci7DAAPOwOs+3bOfUC44nUa31bejnGjc3cSN4D1Es0MfRnB9Lqc9D7yyy9Bm+vk/uR5bbxrROnqJ0QjQmUz2+FVGVXijrdUO1oPnjijWoqP/98+DD2l+AN15TrRC6QgEFs96OyYZEX+7fOpHCS0yJTFWa0i0EzynQyyF2FW6h+uemh6fw96wuBgx/i5diYTAAl1P9fsT3OptnpunuuaiPlnh34htCsi2dOJRl8H15GuFQ/25HuHnlaozKKj3SrHw7OjJbxL27ThJGUjIQAg4Ke2RXK/nyHSJ6T+DwtqYerKHfhdND95Mm7Vd8RxkhW4dtpGyuM3M+RK6EOaOY/kbAHikCrSGIeZdS9cEkzBrn1bqdc5wdFfyggcTOQqfj0dcMsNzvUA8WAKFpu/FHgrVYWcGM4te3hNHUKFlGoD7lCXU3s6SQk1CLfl3+H+zLCyNWdxbIpTaigBenSXmBumHwvTV7v9F7uY2Y7iOtru0l616cyJFctOAjIRQVeuZvx93Agv9QCMEBK6vHRUJidTNJT9Up/rShpmvo36suu5PaxySddDoTwoBMftpFuoVjVXSkJBOak0pNaKQxGE53boTsOGF2ngD4YBza/n548tpSxBzLw1TUvXznsilK0pc8nkCiP83YG6iK4Q+dh8/XxsZj2+EL+GBMOjbqMcUwfwRYtA63UInYJCgUp21JebaFa6bVbNf5XzAYS2smI6tGKuLKpyN7IjlWuicmBMUCmsAZYOYz2xYiGu3sl2wiwF8DydpYOUMy9UuIf/JNwjZge1I36JS/v1AnLH7P2iwMLrjHTFCq4Kw58ve2Jj2gVlb7ydQoySo0P9arbZ/8gkRGcezlHiZWKs7GKSlLrYmIgqLRIFrW3jCVpalmcazTMf4VltH5WI+ejlH6eeuK0jgSDhH8pWIPUvLjsOD+x2vW7tw/lJym2JY24VvyUgnSeBmvfM9LLTTX2BLzwtrLb9AQ4+5W4USbwB4/y9tqDgonQ2SIb2VeSCBFLPeSHk5sw2bzPnypIfH8l19KrLcUEFAPAyo7zfUhVcJSf2pwvGEgDYrbHvFB1Lm2bDZeY8MCl0d9nCvM0g8RMNC3c+ukX9uMVPlvtl1X2FZvVkwvmRy8BdvJJPsZ791AN6UOnGbX8Af7KBIJR1By7ljGCL0piCgzhfeBfjRhcQjDgGLH+tXNFlYGZjEcY3WgLkIe3d4ie1yIaS3q6eZdeIpHtYC0yA+huWVAB9wYYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Baltic Conformity Assessment OÜ\",\"holder\":\"Nordhavn Marine Electronics A/S\",\"certificate_number\":\"BCA-EMC-2024-0458\",\"issue_date\":\"2024-11-27\",\"expiry_date\":\"2029-11-26\",\"scope\":\"Electromagnetic compatibility of shipboard navigation displays, model ND-7\",\"signatory\":\"Kristjan Põder\",\"notes\":null}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3199,
+      "output_tokens": 347,
+      "output_tokens_details": {
+        "thinking_tokens": 201
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

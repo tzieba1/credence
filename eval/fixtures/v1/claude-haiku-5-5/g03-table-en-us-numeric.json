@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "case_id": "g03-table-en-us-numeric",
+  "document_sha256": "8fc38fb919dfbc28cd270309a7056eb275fdf7f9f94668e1529af20fb0e76e2e",
+  "model": "claude-haiku-5-5",
+  "prompt_version": "v1",
+  "recorded_at": "2026-11-05T07:43:39+00:00",
+  "latency_ms": 3261,
+  "request_id": "req_011CgjQZDqk9mrNgdhKeCt3q",
+  "response": {
+    "id": "msg_011CgjQZECKmCRtTXGUtRB7a",
+    "container": null,
+    "content": [
+      {
+        "signature": "CAQS3goKEAgTGAI4AUIIdGhpbmtpbmcSDJZaDkI24/wVtGR7eBoM5Q2BxBi85msW/LRfIjA/fpe9eQ/VyIM3GUp9LZ4PVuVWEIInxvbfLSe4jAPHCbO6YTA1n2cg4pLmo3a3F3Uq+wm4aBEzZ0Y2OjoLqnYUPoN8bWfnFYz2Wu0xnleYyEyScAQY0nJJ2hW84ok9/Q7pAEBZfDzjoF1bx7ekqVQp2xFjodSk29TIt+DxOIOxCxcoPcGf0QepUY5LY2i+QhdmQs+ymPNVn3v6hOTsuls6k9fJayYHPSKANU+VD9Sjxaw9FPdZkqxmkFOqO7MxWWKg09UdJaacA0kbVtSeaZF0Hx1R0EQBUXvEifL8Qs3AbW1w3k7iTWAhK26Mme1j7UuU7KWxdDomC54z+zaqX7bEcuZYUdfW5QIfSTzho6qfADkHvIQI79tdgpUVRsuWlkgOTIIx5Z/GeKCf8J0tKsey89yD7++DETT4M9CByms8vKeQNcPhSgLNLC9gDY/UmF0hnMT2q6q5oqUfDo7bf2aVjDziMee/pfznRUrlX13g8+rR4pDIXlT57kbPBnYB+3SH1y5oMOXaBciVjUvTwU4eaNs4ri0qFKNZtVB4VPx9qhwWTWmdQNscVhrPMTYMdzy55xcaGJFM6PxRnwCYW9jx1EWF2vXap/sG4Y++zA/PEUg23ynpkW2X0RKmG7CRbADI1R1CbVs5X1w7oaHGXhDnhPufySZBgHjjtIyU2wRky+UBhwYZD5ORryqITIxCgldFhghCOqjQ815TJflxxDZDaSX0vVrQJj3dwTQ1GdZGPG5DJbTn+XuwxWGX0OwFGregUVnb1te+YVH6vluZzXl30haBSFybBqm7hl1AVt1W6Ee/43Frm2l774b5RlQZaTHBzl8qvgZHnTty3Aug5nQsaH68GjuCGX+DkxRf2Yvt4blJQmFEG1eoC8TX8dJcQJng8xYFps3MrB3NrhxFq6bTLUz+nOIW5DV+oN4xUlxAJPKWB55GDKnGr/frTOGSxVjRwt/Yu0ihe4plwXR9AFE5aGPWSzv/UQtNFvi5eZ3dDN5zctLQIEYN68pRbVSDuDG+gIgjsry6flTGAC5Q2W/cEHkRuGYGp6dZgX846fvWaItbaEXNVu6QNM2NkBBQXoawNS9BlSm73a0SkGGnSd8yxVTTaLMXDKUeh1Rqi0/5iPdz6SXb6g8J4nta3xp37MdgjYC//7PMYfH1FMvbfZpW5T2bE8gQKvGZHuIoZPAYKfieCtoJU2OONUxeNGP+GjmdTtlQVAU6gIo+6RlYAGbDgmB5Qs5LDtXnyvhfVH1rmuc1nR5ehE+zfwmKWCkv2R7IHJGUXP8kAenwLMHEZStMKDEZjXdTARMbCReKpJoo9UrymchFlcKMpJXfQLnrnH8jmTIy9DiuZkE5vAjjjHFXkFi0oIRolCGnWs9gf1hOBcpsSJBhynQco1saaxe6hNiLhFPEldQLWcqi2W6fzmWqtzhnZPulkWQn/Wv4PPQlZ/FuPj8wB0pX8aRTpipiO5KWqMHx0Sd+36Z07KFp9FGbUSy/UuBRZHh/cKXXz3bIbRki+GPRTN2whPG2te090UhDrY4J1ftIrQsfGUwp42DZojXEqaq2I65LRnx6FKQeBTsqGt0fQRDkWkI+7DAI5IT97W8l+1yolAkztxHJcDEZ79XAyDgwcPtlpnnvoBnCKp5xr5JbeGzPuWZnr0dgqUDjcF57+w9q1ort82LBUKGpSxqVUwjebJhgPS6lSiVk37IxhqAVCh8WKTWmf1TQqqxz77+Tnio2RLyQMps/0S7Ckd0taupTOmmuX4CJQIkYAQ==",
+        "thinking": "",
+        "type": "thinking"
+      },
+      {
+        "text": "{\"issuer\":\"Great Lakes Product Safety Inc.\",\"holder\":\"Marquette Industrial Controls LLC\",\"certificate_number\":\"GLPS-E-2024-11932\",\"issue_date\":\"2024-07-23\",\"expiry_date\":\"2029-07-22\",\"scope\":\"Industrial control panels, Type 4 enclosures, 600 V maximum\",\"signatory\":\"Dana R. Whitfield\",\"notes\":\"The document also states the standard UL 508A, the holder address 1180 Industrial Parkway, Marquette, MI 49855, USA, and that the issuer is accredited by the National Accreditation Board, registration 0421. The schema has no fields for these, so they are recorded here. Dates were read as MM/DD/YYYY.\"}",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-haiku-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 3154,
+      "output_tokens": 572,
+      "output_tokens_details": {
+        "thinking_tokens": 324
+      },
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}
